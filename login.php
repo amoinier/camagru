@@ -8,10 +8,18 @@ if ($_POST['ilogin'] && $_POST['ipass']) {
 	if ($result['login'] === $_POST['ilogin'])
 	{
 		if (hash(whirlpool, $_POST['ipass']) === $result['passwd']) {
-			$_SESSION['login'] = $_POST['ilogin'];
-			?>
-			<meta http-equiv="refresh" content='0;URL=index.php'/>
-			<?php
+			if ($result['validate'] == 1) {
+				$_SESSION['login'] = $_POST['ilogin'];
+				?>
+				<meta http-equiv="refresh" content='0;URL=index.php'/>
+				<?php
+			}
+			else {
+				$_SESSION['error'] = "Your account isn't validate.";
+				?>
+				<meta http-equiv="refresh" content='0;URL=index.php'/>
+				<?php
+			}
 		}
 		else {
 			$_SESSION['error'] = "Your password doesn't match with your login.";
