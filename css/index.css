@@ -61,6 +61,24 @@
 	background-color: rgb(205, 205, 205);
 }
 
+#validate {
+	text-align: center;
+	width: 10vw;
+	height: 3vw;
+	margin: 0 auto;
+	margin-top: 9vw;
+	border-radius: 0.2vw;
+	padding: 0vw 2vw;
+	padding-top: 2vw;
+	padding-bottom: 1.5vw;
+	background: rgb(39, 7, 115);
+	border: 0.05vw solid black;
+	position: relative;
+	font-size: 0.8vw;
+	color: white;
+	font-family: helvetica;
+}
+
 input[type=text] {
 	width: 9vw;
 	height: 0.2vw;
