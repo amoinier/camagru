@@ -32,3 +32,7 @@ html, body {
 .button a:hover {
         background-color: rgb(75, 72, 130);
 }
+
+.linebutton {
+	margin-right: 18vw;
+}
