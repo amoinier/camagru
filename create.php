@@ -11,7 +11,7 @@ if ($_POST['ipass'] && $_POST['ipass2'] && $_POST['ilogin'] && $_POST['imail']) 
 		if ($_POST['ipass'] === $_POST['ipass2']) {
 			if ($result['mail'] !== $_POST['imail']) {
 				$passs = hash(whirlpool, $_POST['ipass']);
-				$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`) VALUES ("'.$_POST['ilogin'].'", "'.$passs.'", "'.$_POST['imail'].'"');
+				$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`) VALUES ("'.$_POST['ilogin'].'", "'.$passs.'", "'.$_POST['imail'].'")');
 				$_SESSION['login'] = $_POST['ilogin'];
 				?>
 				<meta http-equiv="refresh" content='0;URL=index.php'/>

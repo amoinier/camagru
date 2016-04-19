@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div class="bandeau">
-			<span id='title'>InstaSnap</span>
+			<a href="index.php"><span id='title'>InstaSnap</span></a>
 			<div class="linebutton">
 				<?php if ($_SESSION['login']) {?>
 				<span class="button"><a href="logout.php">Logout</a></span>
