@@ -1,4 +1,5 @@
 <?php  include('header.php');
+include('config/access.php');
 if (!$_SESSION['login']) {?>
 <div id='login'>
 	<form action="login.php" method="post">
@@ -12,5 +13,10 @@ if (!$_SESSION['login']) {?>
 	$_SESSION['error'] = "";?></div>
 </div>
 <div id="reg"><a id="regtext" href="register.php">Register</a></div>
-<?php } include('footer.php');
+<?php }
+$log = $bdd->query("SELECT `*` FROM snap WHERE `id` LIKE '1';");
+?>
+<img src="<?php echo $log->fetch()['img'];?>"/>
+<?php
+include('footer.php');
 ?>
