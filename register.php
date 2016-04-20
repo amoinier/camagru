@@ -10,7 +10,7 @@ if (!$_SESSION['login']) {?>
 		<input type="password" id='ipass2' name="ipass2">
 		<label for="fname">Email</label>
 		<input type="email" id='imail' name="imail">
-		<input type="submit" name="submit" value="Submit">
+		<input type="submit" name="submit" value="Register">
 	</form>
 	<div class="err"><?php echo $_SESSION['error'];
 	$_SESSION['error'] = "";?></div>

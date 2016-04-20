@@ -55,6 +55,12 @@
     border-radius: 0.1vw;
 	border: 0.05vw solid black;
     cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#forget {
+	color: white;
 }
 
 #regtext:hover {
@@ -123,6 +129,22 @@ input[type=submit] {
     border-radius: 0.1vw;
 	border: 0.05vw solid black;
     cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+button {
+    width: 2vw;
+    background-color: white;
+    color: rgb(39, 7, 115);
+	font-size: 0.8vw;
+    padding: 0.6vw 3.5vw;
+    margin: 0.4vw 0;
+    border-radius: 0.1vw;
+	border: 0.05vw solid black;
+    cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
 }
 
 input[type=submit]:hover {
@@ -131,7 +153,7 @@ input[type=submit]:hover {
 
 .err {
 	margin-top: 0.5vw;
-	font-size: 0.8vw;
+	font-size: 0.6vw;
 	color: white;
 	font-family: helvetica;
 
