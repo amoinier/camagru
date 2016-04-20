@@ -14,7 +14,7 @@ if (!$_SESSION['login']) {?>
 </div>
 <div id="reg"><a id="regtext" href="register.php">Register</a></div>
 <?php }
-$log = $bdd->query("SELECT `*` FROM snap WHERE `id` LIKE '1';");
+$log = $bdd->query("SELECT `*` FROM snap WHERE `id` LIKE '14';");
 ?>
 <img src="<?php echo $log->fetch()['img'];?>"/>
 <?php

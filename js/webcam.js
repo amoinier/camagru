@@ -62,6 +62,12 @@ function post(path, params, method) {
     form.submit();
 }
 
+function auto_refresh()
+{
+	new Ajax.Updater('#snap_right', 'snap.php', {parameters:'mode=auto_refresh', evalScripts:true, asynchronous:true})
+  return true
+}
+
 // Converts canvas to an image
 function convertCanvasToImage(canvas) {
 	var image = new Image();
