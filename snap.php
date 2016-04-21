@@ -10,6 +10,7 @@ if ($_SESSION['login']) {?>
 			<div id="snap_win" class="snap_win">
 				<div id="select-filter">
 					<select id="filterid">
+						<option value=""></option>
 						<option value="face.png">Face</option>
 						<option value="cat.png">Cat</option>
 						<option value="42.png">42 Logo</option>
