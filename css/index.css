@@ -103,7 +103,6 @@
 	float: right;
 	width: 10vw;
 	padding-top: 1vw;
-	padding-bottom: 1vw;
 	padding-left: 1vw;
 	padding-right: 1vw;
 	border-radius: 0.2vw;
@@ -137,6 +136,65 @@
 	background: rgb(39, 7, 115);
 	border: 0.05vw solid black;
 	position: relative;
+}
+
+#snapbut {
+    width: 10vw;
+    background-color: white;
+    color: rgb(39, 7, 115);
+	font-size: 0.8vw;
+    padding: 0.6vw 3.5vw;
+    margin: 0.4vw 0;
+    border-radius: 0.1vw;
+	border: 0.05vw solid black;
+    cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#snapbut:hover {
+	background-color: rgb(205, 205, 205);
+}
+
+.delete {
+background:url(delete.png) no-repeat;
+border:0;
+color:#fff;
+font-size:12px;
+font-weight:lighter;
+height:33px;
+width:117px;
+}
+
+.deleteimg {
+	width: 1vw;
+	height: 1vw;
+	margin-right: 10vw;
+}
+.sendimg {
+	width: 0.9vw;
+	height: 0.9vw;
+	margin-top: -1.1vw;
+	margin-left: 4vw;
+	position: absolute;
+}
+
+#savebut {
+    width: 10vw;
+    background-color: white;
+    color: rgb(39, 7, 115);
+	font-size: 0.8vw;
+    padding: 0.6vw 3.5vw;
+    margin: 0.4vw 0;
+    border-radius: 0.1vw;
+	border: 0.05vw solid black;
+    cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+#savebut:hover {
+	background-color: rgb(205, 205, 205);
 }
 
 .min {
@@ -183,21 +241,6 @@ label {
 
 input[type=submit] {
     width: 100%;
-    background-color: white;
-    color: rgb(39, 7, 115);
-	font-size: 0.8vw;
-    padding: 0.6vw 3.5vw;
-    margin: 0.4vw 0;
-    border-radius: 0.1vw;
-	border: 0.05vw solid black;
-    cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-}
-
-button {
-	text-align: center;
-    width: 2vw;
     background-color: white;
     color: rgb(39, 7, 115);
 	font-size: 0.8vw;

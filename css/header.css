@@ -40,10 +40,19 @@ html, body {
 	margin-right: 18vw;
 }
 
-.footer {
+.footersnap {
 	width: 100%;
 	height: 5vw;
 	background: rgb(39, 7, 115);
 	bottom: 0;
 	border-top: 0.05vw solid black;
+}
+
+.footer {
+	width: 100%;
+	height: 5vw;
+	background: rgb(39, 7, 115);
+	position: absolute;
+	bottom: 0;
+	border: 1px solid black;
 }

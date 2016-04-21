@@ -29,13 +29,15 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 
 	// Trigger photo take
-	document.getElementById("snap").addEventListener("click", function() {
+	document.getElementById("snapbut").addEventListener("click", function() {
 		context.drawImage(video, 0, 0, 640, 480);
 	});
 
-	document.getElementById("save").addEventListener("click", function() {
-		post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save'});});
-}, false);
+	document.getElementById("savebut").addEventListener("click", function() {
+		var filterok = document.getElementById("filterid").selectedIndex;
+		var donn = document.getElementsByTagName("option")[filterok].value;
+		post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});});
+	}, false);
 
 
 function post(path, params, method) {
@@ -60,12 +62,6 @@ function post(path, params, method) {
 
     document.body.appendChild(form);
     form.submit();
-}
-
-function auto_refresh()
-{
-	new Ajax.Updater('#snap_right', 'snap.php', {parameters:'mode=auto_refresh', evalScripts:true, asynchronous:true})
-  return true
 }
 
 // Converts canvas to an image
