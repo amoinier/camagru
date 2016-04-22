@@ -159,7 +159,7 @@
 #select-filter {
    background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
    height: 1.5vw;
-   width: 10vw;;
+   width: 10vw;
    position: absolute;
    margin-left: 23.5vw;
    margin-top: 0.5vw;
@@ -173,10 +173,10 @@
 }
 
 #select-filter select {
-   border: 1px solid #ccc;
-   font-size: 16px;
-   height: 34px;
-   width: 268px;
+   border: 0.1vw solid #ccc;
+   font-size: 0.7vw;
+   height: 1.5vw;
+   width: 10vw;
 }
 
 

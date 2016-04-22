@@ -31,6 +31,7 @@ if ($_SESSION['login']) {?>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
+			if(file_exists("resources/rendu.png")) {
 			$destination = imagecreatefrompng("resources/rendu.png");
 			if (preg_match('/.*png/', $_POST['filterpost'])) {
 				$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
@@ -60,6 +61,7 @@ if ($_SESSION['login']) {?>
 			imagepng($destination, 'resources/rendu.png');
 			$imdata = base64_encode(file_get_contents('resources/rendu.png'));
 			$bdd->query('INSERT INTO snap (`login`, `date`, `img`) VALUES ("'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", "data:image/png;base64,'.$imdata.'");');
+		}
 		}
 		$log = $bdd->query("SELECT * FROM snap WHERE `login` LIKE '".$_SESSION['login']."' ORDER BY `date` DESC;");
 		$result = $log->fetchAll();
