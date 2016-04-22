@@ -30,7 +30,7 @@ if ($_SESSION['login']) {?>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
-			ini_set('memory_limit','128M');
+			ini_set('memory_limit','512M');
 			ECHO "OK";
 			if(file_exists("resources/rendu.png")) {
 			$destination = imagecreatefrompng("resources/rendu.png");
