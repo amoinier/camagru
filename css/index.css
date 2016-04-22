@@ -158,14 +158,14 @@
 
 #select-filter {
    background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
-   height: 34px;
-   width: 240px;
+   height: 1.5vw;
+   width: 10vw;;
    position: absolute;
    margin-left: 23.5vw;
    margin-top: 0.5vw;
    border-radius: 0.1vw;
    padding-left: 1vw;
-   padding-right: 1.9vw;
+   padding-right: 1.5vw;
    padding-top: 1vw;
    padding-bottom: 1vw;
    background: rgb(39, 7, 115);
