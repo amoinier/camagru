@@ -33,7 +33,7 @@ if ($_SESSION['login']) {?>
 			ini_set('memory_limit','512M');
 			ECHO "OK";
 			if(file_exists("resources/rendu.png")) {
-			$destination = imagecreatefrompng("resources/rendu.png");
+			$destination = imagecreatefrompng("resources/delete.png");
 			if (preg_match('/.*png/', $_POST['filterpost'])) {
 				$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
 				imagealphablending($source, true);
