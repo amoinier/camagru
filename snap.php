@@ -19,7 +19,6 @@ if ($_SESSION['login']) {?>
 						<option value="IMG_FILTER_EMBOSS">Relief</option>
 						<option value="Relief">Relief-leger</option>
 						<option value="sepia">Sepia</option>
-						<option value="pixel">Pixel</option>
 					</select>
 				</div>
 				<video id="video" width="640" height="480" autoplay></video>
@@ -31,6 +30,7 @@ if ($_SESSION['login']) {?>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
+			ECHO "OK";
 			if(file_exists("resources/rendu.png")) {
 			$destination = imagecreatefrompng("resources/rendu.png");
 			if (preg_match('/.*png/', $_POST['filterpost'])) {
