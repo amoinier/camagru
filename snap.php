@@ -33,6 +33,7 @@ if ($_SESSION['login']) {?>
 			ECHO "OK";
 			if(file_exists("resources/rendu.png")) {
 			$destination = imagecreatefromstring(file_get_contents("resources/rendu.png"));
+			echo "FUCK";
 			if (preg_match('/.*png/', $_POST['filterpost'])) {
 				$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
 				imagealphablending($source, true);
