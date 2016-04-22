@@ -1,6 +1,13 @@
 <?php
 include('database.php');
-$createbdd = new PDO('mysql:host=localhost;charset=utf8', 'root', 'root');
+try
+{
+	$createbdd = new PDO('mysql:host=localhost;charset=utf8', $DB_USER, $DB_PASSWORD);
+}
+catch (PDOException $e)
+{
+    echo 'Échec lors de la connexion : ' . $e->getMessage();
+}
 $createbdd->exec('CREATE DATABASE `db_snap`;');
 try
 {

@@ -2,7 +2,7 @@
 session_start();
 include('config/access.php');
 
-$log = $bdd->query("SELECT `*` FROM users WHERE `login` LIKE '".$_POST['ilogin']."';");
+$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$_POST['ilogin']."';");
 $result = $log->fetch();
 if ($_POST['submit'] === 'Connect' && $_POST['ilogin'] && $_POST['ipass']) {
 	if ($result['login'] === $_POST['ilogin'])

@@ -4,12 +4,12 @@ include('header.php');
 include('config/access.php');
 
 $if = 0;
-$log = $bdd->query("SELECT `*` FROM `users`;");
+$log = $bdd->query("SELECT * FROM `users`;");
 $result = $log->fetchAll();
 foreach ($result as $key => $val) {
 	if (hash(whirlpool, $val['mail']) === $_GET['recovery']) {
 		$if = 1;
-		$log = $bdd->query("SELECT `*` FROM `users` WHERE `mail` LIKE '".$val['mail']."'");
+		$log = $bdd->query("SELECT * FROM `users` WHERE `mail` LIKE '".$val['mail']."'");
 		$ok = $log->fetch(); ?>
 		<div id='login'>
 		<form action="recovery.php" method="post">
@@ -24,7 +24,7 @@ foreach ($result as $key => $val) {
 	}
 	if ($_POST['submit'] === 'Change' && $_POST['ipass'] === $_POST['ipass2']) {
 		$if = 1;
-		$log = $bdd->query("SELECT `*` FROM `users` WHERE `mail` LIKE '".$_POST['imail']."'");
+		$log = $bdd->query("SELECT * FROM `users` WHERE `mail` LIKE '".$_POST['imail']."'");
 		$ok = $log->fetch();
 		$passs = hash(whirlpool, $_POST['ipass']);
 		$log = $bdd->query("UPDATE `users` SET `passwd` = '".$passs."' WHERE `users`.`id` = ".$ok['id']);

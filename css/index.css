@@ -156,6 +156,30 @@
 	background-color: rgb(205, 205, 205);
 }
 
+#select-filter {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
+   position: absolute;
+   margin-left: 23.5vw;
+   margin-top: 0.5vw;
+   border-radius: 0.1vw;
+   padding-left: 1vw;
+   padding-right: 1.9vw;
+   padding-top: 1vw;
+   padding-bottom: 1vw;
+   background: rgb(39, 7, 115);
+   border: 0.05vw solid black;
+}
+
+#select-filter select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+
+
 .delete {
 background:url(delete.png) no-repeat;
 border:0;

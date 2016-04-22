@@ -32,15 +32,17 @@ window.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("snapbut").addEventListener("click", function() {
 		context.drawImage(video, 0, 0, 640, 480);
 	});
-	
-	var okok = document.getElementById("filterid").selectedIndex;
-	var ok = document.getElementsByTagName("option")[okok].value;
-	if (ok.length > 0) {
+
 		document.getElementById("savebut").addEventListener("click", function() {
 			var filterok = document.getElementById("filterid").selectedIndex;
 			var donn = document.getElementsByTagName("option")[filterok].value;
-			post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});});
-		}
+			if (donn.toString() !== "") {
+				post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});
+			}
+			else {
+				alert("Selectionez un filtre");
+			}
+		});
 	}, false);
 
 

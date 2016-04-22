@@ -2,7 +2,7 @@
 session_start();
 include('config/access.php');
 
-$log = $bdd->query("SELECT `*` FROM users WHERE `mail` LIKE '".$_POST['imail']."';");
+$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$_POST['imail']."';");
 $result = $log->fetch();
 if ($result['mail'] === $_POST['imail']) {
 	$headers = 'From: InstaSnap' . "\r\n";

@@ -15,6 +15,11 @@ if ($_SESSION['login']) {?>
 						<option value="cat.png">Cat</option>
 						<option value="42.png">42 Logo</option>
 						<option value="hair.png">Hair</option>
+						<option value="IMG_FILTER_GRAYSCALE">Noir/blanc</option>
+						<option value="IMG_FILTER_EMBOSS">Relief</option>
+						<option value="Relief">Relief-leger</option>
+						<option value="sepia">Sepia</option>
+						<option value="pixel">Pixel</option>
 					</select>
 				</div>
 				<video id="video" width="640" height="480" autoplay></video>
@@ -26,15 +31,32 @@ if ($_SESSION['login']) {?>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
-			$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
-			$largeur_source = imagesx($source);
-			$hauteur_source = imagesy($source);
-			imagealphablending($source, true);
-			imagesavealpha($source, true);
-
 			$destination = imagecreatefrompng("resources/rendu.png");
-
-			imagecopy($destination, $source, 280, 20, 0, 0, $largeur_source, $hauteur_source);
+			if (preg_match('/.*png/', $_POST['filterpost'])) {
+				$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
+				imagealphablending($source, true);
+				imagesavealpha($source, true);
+				imagecopy($destination, $source, 0, 0, 0, 0, imagesx($source), imagesy($source));
+			}
+			else {
+				switch ($_POST['filterpost']) {
+					case 'IMG_FILTER_GRAYSCALE':
+						imagefilter($destination, IMG_FILTER_GRAYSCALE);
+						break;
+					case 'IMG_FILTER_EMBOSS':
+						imagefilter($destination, IMG_FILTER_EMBOSS);
+						break;
+					case 'sepia':
+						imagefilter($destination, IMG_FILTER_GRAYSCALE);
+						imagefilter($destination, IMG_FILTER_COLORIZE, 100, 50, 0);
+						break;
+					case 'Relief':
+						imagefilter($destination, IMG_FILTER_EDGEDETECT);
+						break;
+					default:
+						break;
+				}
+			}
 			imagepng($destination, 'resources/rendu.png');
 			$imdata = base64_encode(file_get_contents('resources/rendu.png'));
 			$bdd->query('INSERT INTO snap (`login`, `date`, `img`) VALUES ("'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", "data:image/png;base64,'.$imdata.'");');

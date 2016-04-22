@@ -14,5 +14,14 @@ if (!$_SESSION['login']) {?>
 </div>
 <div id="reg"><a id="regtext" href="register.php">Register</a></div>
 <?php }
+else {
+	$log = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 ORDER BY `date` DESC;");
+	$result = $log->fetchAll();
+	foreach ($result as $key => $val) {
+	?>
+		<div><img class='min' src="<?php echo $val['img'];?>"/></div>
+	<?php
+	}
+}
 include('footer.php');
 ?>
