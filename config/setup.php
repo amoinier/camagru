@@ -1,5 +1,7 @@
 <?php
 include('database.php');
+$createbdd = new PDO('mysql:host=localhost;charset=utf8', 'root', 'root');
+$createbdd->exec('CREATE DATABASE `db_snap`;');
 try
 {
 	$bdd = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
