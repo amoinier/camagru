@@ -231,7 +231,7 @@ width:117px;
 	padding: 0.3vw 0.3vw;
 	position: absolute;
 	margin-left: 3.7vw;
-	margin-top: -1vw;
+	margin-top: -1.05vw;
 }
 
 #npublish {
@@ -244,19 +244,23 @@ width:117px;
 	padding: 0.3vw 0.3vw;
 	position: absolute;
 	margin-left: 3.0vw;
-	margin-top: -1vw;
+	margin-top: -1.05vw;
 }
 
 .heartind {
 	position: absolute;
 	margin-top: -4.1vw;
 	margin-left: -12.5vw;
+	width: 1.8vw;
+	height: 1.8vw;
 }
 
 .max {
 	margin-bottom: 4vw;
 	border-radius: 0.2vw;
 	border: 0.05vw solid black;
+	width: 25vw;
+	height: 19vw;
 }
 
 .min {

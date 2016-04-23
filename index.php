@@ -19,7 +19,7 @@ else {
 	$result = $log->fetchAll();
 	?><div id='allphoto'><?php
 	foreach ($result as $key => $val) {
-		$like = $bdd->query("SELECT * FROM `like` WHERE `login` LIKE '".$_SESSION['login']."' AND `idphoto` LIKE ".$val['id'].";");
+		$like = $bdd->query("SELECT * FROM love WHERE `login` LIKE '".$_SESSION['login']."' AND `idphoto` LIKE ".$val['id'].";");
 		$likef = $like->fetch();
 		if ($likef && $likef['like'] == 1) {
 			$heart = "resources/heart.png";
@@ -31,7 +31,8 @@ else {
 	<form action="lico.php" method="post">
 		<div class='imgind'><img class='max' src="<?php echo $val['img'];?>"/></div>
 		<input class="heartind" type="image" src="<?php echo $heart;?>" name="like" value="like">
-		<input type="hidden" name="photoid" value="<?php echo $like['photoid'];?>">
+		<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
+		<input type="hidden" name="plike" value="<?php echo $likef['like'];?>">
 	</form>
 	<?php
 	}?>
