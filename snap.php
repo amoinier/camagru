@@ -30,10 +30,8 @@ if ($_SESSION['login']) {?>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
-			ECHO "OK";
 			if(file_exists("resources/rendu.png")) {
 			$destination = imagecreatefromstring(file_get_contents("resources/rendu.png"));
-			echo "FUCK";
 			if (preg_match('/.*png/', $_POST['filterpost'])) {
 				$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
 				imagealphablending($source, true);
@@ -70,11 +68,19 @@ if ($_SESSION['login']) {?>
 				<div id='snap_right'>
 			<?php
 			foreach ($result as $key => $val) {
+				$spost = $bdd->query("SELECT post FROM snap WHERE `img` LIKE '".$val['img']."';");
+				$spostres = $spost->fetch();
 			?>
 			<form class="" action="usesnap.php" method="post">
 				<input type="hidden" src="resources/delete-w.png" class="id" name="id" value="<?php echo $val['id'];?>">
 				<input class="deleteimg" type="image" src="resources/delete-w.png" name="deleteimg" value="delete">
 				<input class="sendimg" type="image" src="resources/send.png" name="sendimg" value="send">
+				<div><?php if ($spostres['post'] == 1) {
+					?><div id='publish'><?php echo "Published!";?></div><?php
+				}
+				else {
+					?><div id='npublish'><?php echo "Not published yet!";?></div><?php
+				}?></div>
 				<div><img class='min' src="<?php echo $val['img'];?>"/></div>
 			</form>
 			<?php

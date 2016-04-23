@@ -17,11 +17,28 @@ if (!$_SESSION['login']) {?>
 else {
 	$log = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 ORDER BY `date` DESC;");
 	$result = $log->fetchAll();
+	?><div id='allphoto'><?php
 	foreach ($result as $key => $val) {
+		$like = $bdd->query("SELECT * FROM `like` WHERE `login` LIKE '".$_SESSION['login']."' AND `idphoto` LIKE ".$val['id'].";");
+		$likef = $like->fetch();
+		if ($likef && $likef['like'] == 1) {
+			$heart = "resources/heart.png";
+		}
+		else {
+			$heart = "resources/heartno.png";
+		}
 	?>
-		<div><img class='min' src="<?php echo $val['img'];?>"/></div>
+	<form action="lico.php" method="post">
+		<div class='imgind'><img class='max' src="<?php echo $val['img'];?>"/></div>
+		<input class="heartind" type="image" src="<?php echo $heart;?>" name="like" value="like">
+		<input type="hidden" name="photoid" value="<?php echo $like['photoid'];?>">
+	</form>
 	<?php
-	}
+	}?>
+</div><?php
 }
-include('footer.php');
 ?>
+<div class="footersnap">
+</div>
+	</body>
+</html>

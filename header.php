@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/font.css" charset="utf-8">
 		<link rel="stylesheet" href="css/header.css" charset="utf-8">
 		<link rel="stylesheet" href="css/index.css" charset="utf-8">
+		<script src='js/index.js'></script>
 		<title><?= $title?></title>
 	</head>
 	<body>
