@@ -95,8 +95,17 @@ else {
 	?>
 	<meta http-equiv="refresh" content='0;URL=index.php'/>
 	<?php
-}?>
-<div class="footersnap">
+}
+if (count($result) < 4) {?>
+<div class="footer">
 </div>
 	</body>
 </html>
+<?php }
+else { ?>
+	<div class="footersnap">
+	</div>
+		</body>
+	</html>
+<?php
+} ?>

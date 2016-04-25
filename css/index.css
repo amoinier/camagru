@@ -279,7 +279,23 @@ width:117px;
 	border-radius: 0.2vw;
 	padding: 0vw 2vw;
 	padding-top: 2vw;
-	margin-bottom: 5vw;
+	margin-bottom: 2vw;
+	background: rgb(39, 7, 115);
+	border: 0.05vw solid black;
+	position: relative;
+}
+
+#page {
+	text-align: center;
+	width: 10vw;
+	height: 2vw;
+	margin: 0 auto;
+	margin-top: 2vw;
+	margin-bottom: 1vw;
+	border-radius: 0.2vw;
+	padding: 0vw 2vw;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
 	background: rgb(39, 7, 115);
 	border: 0.05vw solid black;
 	position: relative;
@@ -343,4 +359,31 @@ input[type=submit]:hover {
 	color: white;
 	font-family: helvetica;
 
+}
+
+.page-nbr {
+	font-size: 1vw;
+	color: white;
+	font-family: helvetica;
+	margin-top: 0.3vw;
+	margin-left: -0.1vw;
+	position: absolute;
+}
+
+.pagef {
+	margin-left: -0.5vw;
+}
+
+.pagel {
+	margin-left: 0.5vw;
+}
+
+.nbrlike {
+	background-color: rgb(39, 7, 115);
+	font-size: 0.8vw;
+	color: white;
+	font-family: helvetica;
+	position: absolute;
+	margin-top: -3.7vw;
+	margin-left: -10vw;
 }
