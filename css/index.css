@@ -255,6 +255,14 @@ width:117px;
 	height: 1.8vw;
 }
 
+.commentind {
+	position: absolute;
+	margin-top: -4.1vw;
+	margin-left: -10.5vw;
+	width: 1.8vw;
+	height: 1.8vw;
+}
+
 .max {
 	margin-bottom: 4vw;
 	border-radius: 0.2vw;
@@ -385,5 +393,31 @@ input[type=submit]:hover {
 	font-family: helvetica;
 	position: absolute;
 	margin-top: -3.7vw;
-	margin-left: -10vw;
+	margin-left: -8vw;
+}
+
+.onclick-menu {
+    display: inline-block;
+}
+.onclick-menu:before {
+	position: absolute;
+	font-size: 0.6vw;
+	color: white;
+	font-family: helvetica;
+	margin-top: -3vw;
+	margin-left: -12vw;
+    content: "Comment";
+}
+.onclick-menu:focus .onclick-menu-content {
+    display: block;
+}
+.onclick-menu-content {
+	list-style-type: none;
+    z-index: 1;
+	width: 25vw;
+    display: none;
+	text-align: center;
+	border-radius: 0.2vw;
+	background: rgb(39, 7, 115);
+	color: white;
 }

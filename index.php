@@ -45,9 +45,20 @@ else {
 			<span class='nbrlike'><?php echo count($nbrlikef);?> people(s) like this photo.</span>
 			<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
 			<input type="hidden" name="plike" value="<?php echo $likef['like'];?>">
+			<input type="hidden" name="nbrpage" value="<?php echo $_GET['page'];?>">
 		</form>
-		<?php
-	}?>
+		<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
+		<div tabindex="0" class="onclick-menu">
+		    <ul class="onclick-menu-content">
+				<?php
+				$comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".$val['id'].";");
+				$comment = $comm->fetchall();
+				foreach ($comment as $key => $value) {
+					echo "<li>".$value['login'].": ".$value['text']."</li>";
+				}?>
+		    </ul>
+		</div>
+<?php }?>
 </div>
 <?php }?>
 <div id="page">
