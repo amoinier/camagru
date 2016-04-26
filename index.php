@@ -72,8 +72,7 @@ $snap = $bdd->query('SELECT * FROM `snap` WHERE `post` = 1;');
 $snapnbr = $snap->fetchall();
 $photo = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 ORDER BY `date` DESC;");
 $photonbr = $photo->fetchAll();
-echo $_GET['page'] * 5;
-if (count($photonbr) / 5 + 1 >= $_GET['page']) { ?>
+if (count($photonbr) / 5 + 1 >= $_GET['page'] && count($photonbr) != 0) { ?>
 <div id="page">
 <form action="index.php" method="get">
 	<?php if ($page / 5 - 1 >= 0) { ?>

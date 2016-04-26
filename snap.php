@@ -22,6 +22,7 @@ if ($_SESSION['login']) {?>
 			<button id="snapbut">Snap Photo</button>
 			<button id="savebut">Save Photo</button>
 		</div>
+		<input type="file" id="fileus" name="fileus" value="">
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
