@@ -37,9 +37,21 @@ window.addEventListener("DOMContentLoaded", function() {
 			var img = new Image();
 			img.src = 'resources/filtres/'+ donn;
 			img.onload = function() {
-				context.drawImage(video, 0, 0, 640, 480);
-				context.drawImage(img, 0, 0, img.width, img.height);
-				take = 1;
+				if (document.getElementById('pathfile') && document.getElementById('pathfile').value !== "") {
+					var upl = new Image();
+					upl.src = document.getElementById('pathfile').value;
+					upl.onload = function() {
+						context.drawImage(upl, 0, 0, 640, 480);
+						context.drawImage(img, 0, 0, img.width, img.height);
+						take = 1;
+					}
+				}
+				else {
+					context.drawImage(video, 0, 0, 640, 480);
+					context.drawImage(img, 0, 0, img.width, img.height);
+					take = 1;
+				}
+
 			}
 		}
 		else {

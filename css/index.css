@@ -198,6 +198,19 @@
    width: 10vw;
 }
 
+#imgup {
+	text-align: center;
+	width: 25vw;
+	height: 20vw;
+	margin: 0 auto;
+	margin-top: 4.5vw;
+	padding: 2vw 2vw;
+	border-radius: 0.2vw;
+	background: rgb(39, 7, 115);
+	border: 0.05vw solid black;
+	position: relative;
+}
+
 .delete {
 background:url(delete.png) no-repeat;
 border:0;

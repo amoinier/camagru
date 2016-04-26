@@ -2,13 +2,27 @@
 date_default_timezone_set('Europe/Paris');
 include('config/access.php');
 include('base64.php');
-
+$filepath = "";
+if ($_SESSION['upload'] && $_SESSION['upload'] != -1) {
+	$filepath = $_SESSION['upload'];
+	echo "<input type='hidden' id='pathfile' name='name' value='".$_SESSION['upload']."'>";
+	$_SESSION['upload'] = 0;
+}
+else if ($_SESSION['upload'] == -1) {
+	echo "Un probleme est survenu lors de la lecture du fichier, veuille ressayer";
+	$_SESSION['upload'] = 0;
+}
 if ($_SESSION['login']) {?>
 	<script type="text/javascript" src="js/webcam.js"></script>
 	<div class="container">
 		<div id=snap_left>
 			<div id="snap_win" class="snap_win">
+				<?php if ($filepath === "") { ?>
 				<video id="video" width="640" height="480" autoplay></video>
+				<?php }
+				else {?>
+					<img id="imgup" src="<?php echo $filepath; ?>"/>
+				<?php }?>
 				<canvas id="canvas" width="640" height="480"></canvas>
 			</div>
 			<div id="select-filter">
@@ -21,48 +35,51 @@ if ($_SESSION['login']) {?>
 			</div>
 			<button id="snapbut">Snap Photo</button>
 			<button id="savebut">Save Photo</button>
+			<?php if ($filepath === "") { ?>
+			<form method="POST" action="upload.php" enctype="multipart/form-data">
+				<input type="file" name="avatar">
+				<input type="submit" name="envoyer" value="Envoyer le fichier">
+			</form>
+			<?php } ?>
 		</div>
-		<form method="POST" action="upload.php" enctype="multipart/form-data">
-     <!-- On limite le fichier à 100Ko -->
-     <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-     Fichier : <input type="file" name="avatar">
-     <input type="submit" name="envoyer" value="Envoyer le fichier">
-</form>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
 			if(file_exists("resources/rendu.png")) {
-			$destination = imagecreatefromstring(file_get_contents("resources/rendu.png"));
-			if (preg_match('/.*png/', $_POST['filterpost'])) {
-				$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
-				imagealphablending($source, true);
-				imagesavealpha($source, true);
-				imagecopy($destination, $source, 0, 0, 0, 0, imagesx($source), imagesy($source));
-			}
-			if ($_POST['effectpo']) {
-				switch ($_POST['effectpo']) {
-					case 'IMG_FILTER_GRAYSCALE':
-					echo "OK";
+				$destination = imagecreatefromstring(file_get_contents("resources/rendu.png"));
+				if (preg_match('/.*png/', $_POST['filterpost'])) {
+					$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
+					imagealphablending($source, true);
+					imagesavealpha($source, true);
+					imagecopy($destination, $source, 0, 0, 0, 0, imagesx($source), imagesy($source));
+				}
+				if ($_POST['effectpo']) {
+					switch ($_POST['effectpo']) {
+						case 'IMG_FILTER_GRAYSCALE':
+						echo "OK";
 						imagefilter($destination, IMG_FILTER_GRAYSCALE);
 						break;
-					case 'IMG_FILTER_EMBOSS':
+						case 'IMG_FILTER_EMBOSS':
 						imagefilter($destination, IMG_FILTER_EMBOSS);
 						break;
-					case 'sepia':
+						case 'sepia':
 						imagefilter($destination, IMG_FILTER_GRAYSCALE);
 						imagefilter($destination, IMG_FILTER_COLORIZE, 100, 50, 0);
 						break;
-					case 'Relief':
+						case 'Relief':
 						imagefilter($destination, IMG_FILTER_EDGEDETECT);
 						break;
-					default:
+						default:
 						break;
+					}
+				}
+				imagepng($destination, 'resources/rendu.png');
+				$imdata = base64_encode(file_get_contents('resources/rendu.png'));
+				$bdd->query('INSERT INTO snap (`login`, `date`, `img`) VALUES ("'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", "data:image/png;base64,'.$imdata.'");');
+				if(file_exists("resources/rendu.png")) {
+					unlink("resources/rendu.png");
 				}
 			}
-			imagepng($destination, 'resources/rendu.png');
-			$imdata = base64_encode(file_get_contents('resources/rendu.png'));
-			$bdd->query('INSERT INTO snap (`login`, `date`, `img`) VALUES ("'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", "data:image/png;base64,'.$imdata.'");');
-		}
 		}
 		$log = $bdd->query("SELECT * FROM snap WHERE `login` LIKE '".$_SESSION['login']."' ORDER BY `date` DESC;");
 		$result = $log->fetchAll();
