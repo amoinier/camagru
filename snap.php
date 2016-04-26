@@ -22,11 +22,12 @@ if ($_SESSION['login']) {?>
 			<button id="snapbut">Snap Photo</button>
 			<button id="savebut">Save Photo</button>
 		</div>
-		<form action="upload.php" method="post" enctype="multipart/form-data">
-			Select image to upload:
-			<input type="file" name="fileToUpload" id="fileToUpload">
-			<input type="submit" value="Upload Image" name="submit">
-		</form>
+		<form method="POST" action="upload.php" enctype="multipart/form-data">
+     <!-- On limite le fichier à 100Ko -->
+     <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+     Fichier : <input type="file" name="avatar">
+     <input type="submit" name="envoyer" value="Envoyer le fichier">
+</form>
 		<?php
 		if ($_POST['sub'] === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
