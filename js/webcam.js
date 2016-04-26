@@ -30,27 +30,28 @@ window.addEventListener("DOMContentLoaded", function() {
 
 	// Trigger photo take
 	document.getElementById("snapbut").addEventListener("click", function() {
+		var filterok = document.getElementById("filterid").selectedIndex;
+		var donn = document.getElementsByTagName("option")[filterok].value;
+		var img = new Image();
+		img.src = 'resources/filtres/'+ donn;
+		img.onload = function(){
 		context.drawImage(video, 0, 0, 640, 480);
+		context.drawImage(img, 0, 0, img.width, img.height);
+		}
 	});
 
-		document.getElementById("savebut").addEventListener("click", function() {
-			var filterok = document.getElementById("filterid").selectedIndex;
-			var donn = document.getElementsByTagName("option")[filterok].value;
-			if (donn.toString() !== "") {
-				post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});
-			}
-			else {
-				alert("Selectionez un filtre");
-			}
-		});
-	}, false);
+	document.getElementById("savebut").addEventListener("click", function() {
+		var filterok = document.getElementById("filterid").selectedIndex;
+		var donn = document.getElementsByTagName("option")[filterok].value;
+		if (donn.toString() !== "")
+			post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});
+		else
+			alert("Selectionez un filtre");
+	});
+}, false);
 
-
-function post(path, params, method) {
-    method = method || "post"; // Set method to post by default if not specified.
-
-    // The rest of this code assumes you are not using a library.
-    // It can be made less wordy if you use one.
+function post(path, params) {
+    method = "post";
     var form = document.createElement("form");
     form.setAttribute("method", method);
     form.setAttribute("action", path);
@@ -61,18 +62,9 @@ function post(path, params, method) {
             hiddenField.setAttribute("type", "hidden");
             hiddenField.setAttribute("name", key);
             hiddenField.setAttribute("value", params[key]);
-
             form.appendChild(hiddenField);
          }
     }
-
     document.body.appendChild(form);
     form.submit();
-}
-
-// Converts canvas to an image
-function convertCanvasToImage(canvas) {
-	var image = new Image();
-	image.src = canvas.toDataURL("image/png");
-	return image;
 }

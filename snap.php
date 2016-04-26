@@ -14,7 +14,6 @@ if ($_SESSION['login']) {?>
 						<option value="face.png">Face</option>
 						<option value="cat.png">Cat</option>
 						<option value="42.png">42 Logo</option>
-						<option value="hair.png">Hair</option>
 						<option value="IMG_FILTER_GRAYSCALE">Noir/blanc</option>
 						<option value="IMG_FILTER_EMBOSS">Relief</option>
 						<option value="Relief">Relief-leger</option>
