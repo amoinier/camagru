@@ -50,6 +50,7 @@ else {
 		<form action="lico.php" method="post">
 			<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
 			<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
+			<input type="hidden" name="log" value="<?php echo $val['login'];?>">
 			<input id="textcom" type="text" name="sendcom" value="">
 		</form>
 		<?php $comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".$val['id'].";");
@@ -68,15 +69,24 @@ else {
 </div>
 <?php }
 $snap = $bdd->query('SELECT * FROM `snap` WHERE `post` = 1;');
-$snapnbr = $snap->fetchall();?>
+$snapnbr = $snap->fetchall();
+$photo = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 ORDER BY `date` DESC;");
+$photonbr = $photo->fetchAll();
+echo $_GET['page'] * 5;
+if (count($photonbr) / 5 + 1 >= $_GET['page']) { ?>
 <div id="page">
 <form action="index.php" method="get">
-	 <input class="pagef" type="image" src="resources/pagef.png" name="page" value="<?php if ($page / 5 - 1 >= 0) {echo $page / 5 - 1;} else {$page = 0;} ?>">
+	<?php if ($page / 5 - 1 >= 0) { ?>
+	 <input class="pagef" type="image" src="resources/pagef.png" name="page" value="<?php if ($page / 5 - 1 >= 0) {echo $page / 5;} else {$page = 0;} ?>">
+	 <?php } ?>
 	 <span class="page-nbr"><?php echo $page / 5 + 1; ?></span>
-	 <input class="pagel" type="image" src="resources/pagel.png" name="page" value="<?php if ($page / 5 + 2 <= (count($snapnbr) / 5) + 1) {echo $page / 5 + 2;} else {$page = (count($snapnbr) / 5) + 1;} ?>">
+	 <?php if ($page / 5 + 2 < (count($snapnbr) / 5) + 1) { ?>
+	 <input class="pagel" type="image" src="resources/pagel.png" name="page" value="<?php if ($page / 5 + 2 <= (count($snapnbr) / 5) + 1) {echo $page / 5 + 2;}?>">
+	 <?php } ?>
 </form>
 </div>
 <?php
+}
 if (count($result) < 2) { ?>
 	<div class="footer">
 	</div>

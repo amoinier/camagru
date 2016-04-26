@@ -428,9 +428,10 @@ input[type=submit]:hover {
 	margin-top: -1.5vw;
 	padding-top: 1vw;
 	padding-right: 1vw;
-	padding-bottom: 0.5vw;
+	padding-bottom: 0.2vw;
 	border-radius: 0.1vw;
 	color: rgb(39, 7, 115);
+	border: 0.05vw solid black;
 	background-color: white;
 	font-family: helvetica;
 }
