@@ -28,6 +28,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		}, errBack);
 	}
 
+	var take = 0;
 	// Trigger photo take
 	document.getElementById("snapbut").addEventListener("click", function() {
 		var filterok = document.getElementById("filterid").selectedIndex;
@@ -38,20 +39,26 @@ window.addEventListener("DOMContentLoaded", function() {
 			img.onload = function() {
 				context.drawImage(video, 0, 0, 640, 480);
 				context.drawImage(img, 0, 0, img.width, img.height);
+				take = 1;
 			}
 		}
 		else {
-			alert("Selectionez un filtre");
+			alert("Choose a filter first!");
 		}
 	});
 
 	document.getElementById("savebut").addEventListener("click", function() {
 		var filterok = document.getElementById("filterid").selectedIndex;
 		var donn = document.getElementsByTagName("option")[filterok].value;
-		if (donn.toString() !== "")
-			post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});
-		else
-			alert("Selectionez un filtre");
+		if (take == 1) {
+			if (donn.toString() !== "")
+				post('snap.php', {img: canvas.toDataURL("image/png"), sub: 'save', filterpost: donn});
+			else
+				alert("Choose a filter first!");
+		}
+		else {
+			alert("Take a photo first!");
+		}
 	});
 }, false);
 
