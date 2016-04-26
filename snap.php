@@ -33,11 +33,11 @@ if ($_SESSION['login']) {?>
 					<option value="42.png">42 Logo</option>
 				</select>
 			</div>
-			<button id="snapbut">Snap Photo</button>
-			<button id="savebut">Save Photo</button>
+			<button id="snapbut">Preview Photo</button>
+			<button id="savebut">Send Photo</button>
 			<?php if ($filepath === "") { ?>
 			<form method="POST" action="upload.php" enctype="multipart/form-data">
-				<input type="file" name="avatar">
+				<input type="file" name="upload-photo">
 				<input type="submit" name="envoyer" value="Envoyer le fichier">
 			</form>
 			<?php } ?>

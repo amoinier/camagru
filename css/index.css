@@ -414,6 +414,20 @@ input[type=submit]:hover {
 	margin-left: -10.4vw;
 }
 
+.postlogin {
+	background-color: rgb(39, 7, 115);
+	font-size: 0.8vw;
+	color: white;
+	font-family: helvetica;
+	position: absolute;
+	margin-top: -5.7vw;
+	margin-left: 10vw;
+}
+
+.linklog {
+	color: white;
+}
+
 .onclick-menu {
     display: inline-block;
 	outline: none;

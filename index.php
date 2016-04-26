@@ -43,6 +43,7 @@ else {
 			<div class='imgind'><img class='max' src="<?php echo $val['img'];?>"/></div>
 			<input class="heartind" type="image" src="<?php echo $heart;?>" name="like" value="like">
 			<span class='nbrlike'><?php echo count($nbrlikef); if (count($nbrlikef) < 2) {$people = " people";} else {$people = " peoples";} echo $people;?> like this photo.</span>
+			<span class="postlogin">By <a class="linklog" href="users.php?login=<?php echo $val['login'];?>"><?php echo $val['login'];?></a></span>
 			<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
 			<input type="hidden" name="plike" value="<?php echo $likef['like'];?>">
 			<input type="hidden" name="nbrpage" value="<?php echo $_GET['page'];?>">
