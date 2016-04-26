@@ -8,20 +8,16 @@ if ($_SESSION['login']) {?>
 	<div class="container">
 		<div id=snap_left>
 			<div id="snap_win" class="snap_win">
-				<div id="select-filter">
-					<select id="filterid">
-						<option value=""></option>
-						<option value="face.png">Face</option>
-						<option value="cat.png">Cat</option>
-						<option value="42.png">42 Logo</option>
-						<option value="IMG_FILTER_GRAYSCALE">Noir/blanc</option>
-						<option value="IMG_FILTER_EMBOSS">Relief</option>
-						<option value="Relief">Relief-leger</option>
-						<option value="sepia">Sepia</option>
-					</select>
-				</div>
 				<video id="video" width="640" height="480" autoplay></video>
 				<canvas id="canvas" width="640" height="480"></canvas>
+			</div>
+			<div id="select-filter">
+				<select id="filterid">
+					<option value=""></option>
+					<option value="face.png">Face</option>
+					<option value="cat.png">Cat</option>
+					<option value="42.png">42 Logo</option>
+				</select>
 			</div>
 			<button id="snapbut">Snap Photo</button>
 			<button id="savebut">Save Photo</button>
@@ -37,9 +33,10 @@ if ($_SESSION['login']) {?>
 				imagesavealpha($source, true);
 				imagecopy($destination, $source, 0, 0, 0, 0, imagesx($source), imagesy($source));
 			}
-			else {
-				switch ($_POST['filterpost']) {
+			if ($_POST['effectpo']) {
+				switch ($_POST['effectpo']) {
 					case 'IMG_FILTER_GRAYSCALE':
+					echo "OK";
 						imagefilter($destination, IMG_FILTER_GRAYSCALE);
 						break;
 					case 'IMG_FILTER_EMBOSS':

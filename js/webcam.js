@@ -32,11 +32,16 @@ window.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("snapbut").addEventListener("click", function() {
 		var filterok = document.getElementById("filterid").selectedIndex;
 		var donn = document.getElementsByTagName("option")[filterok].value;
-		var img = new Image();
-		img.src = 'resources/filtres/'+ donn;
-		img.onload = function(){
-		context.drawImage(video, 0, 0, 640, 480);
-		context.drawImage(img, 0, 0, img.width, img.height);
+		if (donn.toString() !== "") {
+			var img = new Image();
+			img.src = 'resources/filtres/'+ donn;
+			img.onload = function() {
+				context.drawImage(video, 0, 0, 640, 480);
+				context.drawImage(img, 0, 0, img.width, img.height);
+			}
+		}
+		else {
+			alert("Selectionez un filtre");
 		}
 	});
 
