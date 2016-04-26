@@ -42,30 +42,38 @@ else {
 		<form action="lico.php" method="post">
 			<div class='imgind'><img class='max' src="<?php echo $val['img'];?>"/></div>
 			<input class="heartind" type="image" src="<?php echo $heart;?>" name="like" value="like">
-			<span class='nbrlike'><?php echo count($nbrlikef);?> people(s) like this photo.</span>
+			<span class='nbrlike'><?php echo count($nbrlikef); if (count($nbrlikef) < 2) {$people = " people";} else {$people = " peoples";} echo $people;?> like this photo.</span>
 			<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
 			<input type="hidden" name="plike" value="<?php echo $likef['like'];?>">
 			<input type="hidden" name="nbrpage" value="<?php echo $_GET['page'];?>">
 		</form>
-		<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
+		<form action="lico.php" method="post">
+			<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
+			<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
+			<input id="textcom" type="text" name="sendcom" value="">
+		</form>
+		<?php $comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".$val['id'].";");
+		$comment = $comm->fetchall();
+		if ($comment) {?>
 		<div tabindex="0" class="onclick-menu">
 		    <ul class="onclick-menu-content">
 				<?php
-				$comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".$val['id'].";");
-				$comment = $comm->fetchall();
 				foreach ($comment as $key => $value) {
-					echo "<li>".$value['login'].": ".$value['text']."</li>";
+					echo "<li>".$value['login'].": ".$value['text']."</li><br />";
 				}?>
 		    </ul>
 		</div>
-<?php }?>
+<?php }
+}?>
 </div>
-<?php }?>
+<?php }
+$snap = $bdd->query('SELECT * FROM `snap` WHERE `post` = 1;');
+$snapnbr = $snap->fetchall();?>
 <div id="page">
 <form action="index.php" method="get">
 	 <input class="pagef" type="image" src="resources/pagef.png" name="page" value="<?php if ($page / 5 - 1 >= 0) {echo $page / 5 - 1;} else {$page = 0;} ?>">
 	 <span class="page-nbr"><?php echo $page / 5 + 1; ?></span>
-	 <input class="pagel" type="image" src="resources/pagel.png" name="page" value="<?php echo $page / 5 + 2; ?>">
+	 <input class="pagel" type="image" src="resources/pagel.png" name="page" value="<?php if ($page / 5 + 2 <= (count($snapnbr) / 5) + 1) {echo $page / 5 + 2;} else {$page = (count($snapnbr) / 5) + 1;} ?>">
 </form>
 </div>
 <?php

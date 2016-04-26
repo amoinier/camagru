@@ -15,4 +15,7 @@ if ($_POST['like'] === 'like' && is_numeric($_POST['pid'])) {
 	else {
 		$bdd->query('INSERT INTO love (`idphoto`, `login`, `date`, `like`) VALUES ('.$_POST['pid'].', "'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", 1);');
 	}
+}
+else if ($_POST['comment'] === 'comment' && $_POST['sendcom']) {
+	$bdd->query('INSERT INTO comment (`idphoto`, `login`, `date`, `text`) VALUES ('.$_POST['pid'].', "'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", "'.$_POST['sendcom'].'");');
 }?>

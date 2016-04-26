@@ -249,7 +249,7 @@ width:117px;
 
 .heartind {
 	position: absolute;
-	margin-top: -4.1vw;
+	margin-top: -6.1vw;
 	margin-left: -12.5vw;
 	width: 1.8vw;
 	height: 1.8vw;
@@ -257,14 +257,14 @@ width:117px;
 
 .commentind {
 	position: absolute;
-	margin-top: -4.1vw;
-	margin-left: -10.5vw;
+	margin-top: -4.4vw;
+	margin-left: -12.5vw;
 	width: 1.8vw;
 	height: 1.8vw;
 }
 
 .max {
-	margin-bottom: 4vw;
+	margin-bottom: 6vw;
 	border-radius: 0.2vw;
 	border: 0.05vw solid black;
 	width: 25vw;
@@ -380,10 +380,14 @@ input[type=submit]:hover {
 
 .pagef {
 	margin-left: -0.5vw;
+	width: 1.8vw;
+	height: 1.8vw;
 }
 
 .pagel {
 	margin-left: 0.5vw;
+	width: 1.8vw;
+	height: 1.8vw;
 }
 
 .nbrlike {
@@ -392,32 +396,48 @@ input[type=submit]:hover {
 	color: white;
 	font-family: helvetica;
 	position: absolute;
-	margin-top: -3.7vw;
-	margin-left: -8vw;
+	margin-top: -5.7vw;
+	margin-left: -10.4vw;
 }
 
 .onclick-menu {
     display: inline-block;
+	outline: none;
 }
 .onclick-menu:before {
-	position: absolute;
 	font-size: 0.6vw;
 	color: white;
 	font-family: helvetica;
-	margin-top: -3vw;
-	margin-left: -12vw;
-    content: "Comment";
+	margin-top: -2.5vw;
+	margin-left: -12.4vw;
+	position: absolute;
+    content: "See comment ...";
 }
 .onclick-menu:focus .onclick-menu-content {
+	position: static;
     display: block;
+	margin-left: 0.05vw;
 }
 .onclick-menu-content {
+	position: absolute;
 	list-style-type: none;
     z-index: 1;
-	width: 25vw;
+	width: 22.4vw;
     display: none;
-	text-align: center;
-	border-radius: 0.2vw;
-	background: rgb(39, 7, 115);
-	color: white;
+	text-align: left;
+	margin-top: -1.5vw;
+	padding-top: 1vw;
+	padding-right: 1vw;
+	padding-bottom: 0.5vw;
+	border-radius: 0.1vw;
+	color: rgb(39, 7, 115);
+	background-color: white;
+	font-family: helvetica;
+}
+
+#textcom {
+	width: 20vw;
+	position: absolute;
+	margin-left: -10.5vw;
+	margin-top: -4.2vw;
 }
