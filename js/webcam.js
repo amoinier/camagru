@@ -31,7 +31,6 @@ window.addEventListener("DOMContentLoaded", function() {
 	var take = 0;
 	// Trigger photo take
 	document.getElementById("snapbut").addEventListener("click", function() {
-		alert(document.getElementById("fileus").value);
 		var filterok = document.getElementById("filterid").selectedIndex;
 		var donn = document.getElementsByTagName("option")[filterok].value;
 		if (donn.toString() !== "") {
@@ -62,7 +61,6 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 }, false);
-
 function post(path, params) {
     method = "post";
     var form = document.createElement("form");
