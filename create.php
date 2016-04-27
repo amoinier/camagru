@@ -11,7 +11,8 @@ if ($_POST['submit'] === 'Register' && $_POST['ipass'] && $_POST['ipass2'] && $_
 		if ($_POST['ipass'] === $_POST['ipass2']) {
 			if ($result['mail'] !== $_POST['imail']) {
 				$passs = hash(whirlpool, $_POST['ipass']);
-				$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`, `validate`) VALUES ("'.$_POST['ilogin'].'", "'.$passs.'", "'.$_POST['imail'].'", "0");');
+				$defpdp = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAEUlEQVR42mP4TyRgGFVIX4UAI/uOgGWVNeQAAAAASUVORK5CYII=";
+				$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`, `validate`, `pdp`) VALUES ("'.$_POST['ilogin'].'", "'.$passs.'", "'.$_POST['imail'].'", "0", "'.$defpdp.'");');
 				$headers = 'From: InstaSnap' . "\r\n";
 				$headers.= "MIME-version: 1.0\n";
 				$headers.= "Content-type: text/html; charset= iso-8859-1\n";

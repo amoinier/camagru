@@ -14,7 +14,7 @@
 			<div class="linebutton">
 				<?php if ($_SESSION['login']) {?>
 				<span class="button"><a href="logout.php">Logout</a></span>
-				<span class="button"><a href="#">Account</a></span>
+				<span class="button"><a href="users.php?login=<?php echo $_SESSION['login']?>">Profile</a></span>
 				<span class="button"><a href="snap.php">Take a snap!</a></span>
 				<span class="button"><a href="index.php">Home</a></span>
 				<?php }?>

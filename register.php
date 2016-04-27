@@ -8,7 +8,7 @@ if (!$_SESSION['login']) {?>
 		<input type="password" id='ipass' name="ipass">
 		<label for="password2">Retape your password</label>
 		<input type="password" id='ipass2' name="ipass2">
-		<label for="fname">Email</label>
+		<label for="email">Email</label>
 		<input type="email" id='imail' name="imail">
 		<input type="submit" name="submit" value="Register">
 	</form>

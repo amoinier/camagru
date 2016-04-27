@@ -52,6 +52,7 @@ else {
 			<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
 			<input type="hidden" name="pid" value="<?php echo $val['id'];?>">
 			<input type="hidden" name="log" value="<?php echo $val['login'];?>">
+			<input type="hidden" name="nbrpage" value="<?php echo $_GET['page'];?>">
 			<input id="textcom" type="text" name="sendcom" value="">
 		</form>
 		<?php $comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".$val['id'].";");
