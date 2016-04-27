@@ -35,7 +35,7 @@ if ($_SESSION['login']) {
 		<?php if ($_SESSION['error']) { ?>
 		<div id="errorbox"><div class="err"><?php echo $_SESSION['error'];
 		$_SESSION['error'] = "";?></div></div>
-		<?php } ?>
+		<?php }?>
 	<div id="settings">
 		<form action="edit.php" method="post">
 			<label for="facebook">Facebook Account (link):</label>
@@ -62,7 +62,7 @@ if ($_SESSION['login']) {
 			<input type="text" name="newpwd2" value="">
 			<input type="submit" name="Change" value="Change Password">
 		</form></br >
-	</div>
+	</div></br >
 	<?php
 		}
 else {
@@ -71,7 +71,7 @@ else {
 	<?php
 }
 if (count($snapnb) < 2) { ?>
-	<div class="footer">
+	<div class="footersnap">
 	</div>
 </body>
 </html><?php

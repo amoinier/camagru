@@ -3,6 +3,7 @@ include('database.php');
 try
 {
 	$createbdd = new PDO('mysql:host=localhost;charset=utf8', $DB_USER, $DB_PASSWORD);
+	$createbdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e)
 {
@@ -12,6 +13,7 @@ $createbdd->exec('CREATE DATABASE `db_snap`;');
 try
 {
 	$bdd = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e)
 {

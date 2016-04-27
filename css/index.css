@@ -485,8 +485,9 @@ input[type=submit]:hover {
 
 #pdp {
 	width: 10vw;
-	height: 9vw;
+	height: 8.5vw;
 	border-radius: 0.2vw;
+	border: 0.05vw solid black;
 }
 
 #linkface {
@@ -505,6 +506,7 @@ input[type=submit]:hover {
 	padding: 0.5vw 0.5vw;
 	margin-left: 4vw;
 	width: 5vw;
+	border: 0.05vw solid black;
 }
 
 #facebook:hover {
