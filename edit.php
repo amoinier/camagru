@@ -17,7 +17,7 @@ else if ($_POST['Change'] === 'Change Mail') {
 		$bdd->query("UPDATE users SET `mail` = '".htmlspecialchars($_POST['mail1'])."' WHERE `users`.`login` LIKE '".$_SESSION['login']."';");
 	}
 	else {
-		$_SESSION['error'] = "A field is empty or fields doesn't match.";
+		$_SESSION['error'] = "A field is empty or fields don't match.";
 		?>
 		<meta http-equiv="refresh" content='0;URL=editacc.php'/>
 		<?php
@@ -29,7 +29,7 @@ else if (htmlspecialchars($_POST['Change']) === 'Change Password') {
 			$bdd->query("UPDATE users SET `passwd` = '".hash(whirlpool, htmlspecialchars($_POST['newpwd1']))."' WHERE `users`.`login` LIKE '".$_SESSION['login']."';");
 		}
 		else {
-			$_SESSION['error'] = "A field is empty or fields doesn't match.";
+			$_SESSION['error'] = "A field is empty or fields don't match.";
 			?>
 			<meta http-equiv="refresh" content='0;URL=editacc.php'/>
 			<?php

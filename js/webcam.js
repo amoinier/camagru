@@ -51,7 +51,6 @@ window.addEventListener("DOMContentLoaded", function() {
 					context.drawImage(img, 0, 0, img.width, img.height);
 					take = 1;
 				}
-
 			}
 		}
 		else {

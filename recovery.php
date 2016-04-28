@@ -20,17 +20,7 @@ foreach ($result as $key => $val) {
 			<input type="password" id='ipass2' name="ipass2" value="">
 			<input type="hidden" id='imail' name='imail' value=<?php echo htmlspecialchars($val['mail']);?>>
 			<input type="submit" name="submit" value="Change">
-		</form></div><?php
-	}
-	if (htmlspecialchars($_POST['submit']) === 'Change' && htmlspecialchars($_POST['ipass']) === htmlspecialchars($_POST['ipass2'])) {
-		$if = 1;
-		$log = $bdd->query("SELECT * FROM `users` WHERE `mail` LIKE '".htmlspecialchars($_POST['imail'])."'");
-		$ok = $log->fetch();
-		$passs = hash(whirlpool, htmlspecialchars($_POST['ipass']));
-		$log = $bdd->query("UPDATE `users` SET `passwd` = '".$passs."' WHERE `users`.`id` = ".htmlspecialchars($ok['id']));
-		?>
-		<div id="validate">Your password is updated</div>
-		<meta http-equiv="refresh" content='5;URL=index.php'/>
+		</form></div>
 		<?php
 	}
 }
