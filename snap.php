@@ -60,7 +60,13 @@ if ($_SESSION['login']) {?>
 					unlink("resources/rendu.png");
 				}
 				if (file_exists("upload")) {
-					exec('rm -rf upload');
+					$files = glob('upload/*');
+					foreach($files as $file){
+						if(is_file($file)) {
+							unlink($file);
+						}
+					}
+					rmdir("upload");
 				}
 			}
 		}
