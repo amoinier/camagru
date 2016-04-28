@@ -43,41 +43,24 @@ if ($_SESSION['login']) {?>
 			<?php } ?>
 		</div>
 		<?php
-		if ($_POST['sub'] === 'save' && $_POST['img']) {
+		if (htmlspecialchars($_POST['sub']) === 'save' && $_POST['img']) {
 			base64_to_png($_POST['img'], 'resources/rendu.png');
 			if(file_exists("resources/rendu.png")) {
 				$destination = imagecreatefromstring(file_get_contents("resources/rendu.png"));
-				if (preg_match('/.*png/', $_POST['filterpost'])) {
-					$source = imagecreatefrompng("resources/filtres/".$_POST['filterpost']);
+				if (preg_match('/.*png/', htmlspecialchars($_POST['filterpost']))) {
+					$source = imagecreatefrompng("resources/filtres/".htmlspecialchars($_POST['filterpost']));
 					imagealphablending($source, true);
 					imagesavealpha($source, true);
 					imagecopy($destination, $source, 0, 0, 0, 0, imagesx($source), imagesy($source));
 				}
-				if ($_POST['effectpo']) {
-					switch ($_POST['effectpo']) {
-						case 'IMG_FILTER_GRAYSCALE':
-						echo "OK";
-						imagefilter($destination, IMG_FILTER_GRAYSCALE);
-						break;
-						case 'IMG_FILTER_EMBOSS':
-						imagefilter($destination, IMG_FILTER_EMBOSS);
-						break;
-						case 'sepia':
-						imagefilter($destination, IMG_FILTER_GRAYSCALE);
-						imagefilter($destination, IMG_FILTER_COLORIZE, 100, 50, 0);
-						break;
-						case 'Relief':
-						imagefilter($destination, IMG_FILTER_EDGEDETECT);
-						break;
-						default:
-						break;
-					}
-				}
 				imagepng($destination, 'resources/rendu.png');
 				$imdata = base64_encode(file_get_contents('resources/rendu.png'));
 				$bdd->query('INSERT INTO snap (`login`, `date`, `img`) VALUES ("'.$_SESSION['login'].'", "'.date("Y-m-d H:i:s").'", "data:image/png;base64,'.$imdata.'");');
-				if(file_exists("resources/rendu.png")) {
+				if (file_exists("resources/rendu.png")) {
 					unlink("resources/rendu.png");
+				}
+				if (file_exists("upload")) {
+					exec('rm -rf upload');
 				}
 			}
 		}

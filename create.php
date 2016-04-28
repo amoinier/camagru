@@ -2,23 +2,29 @@
 session_start();
 include('config/access.php');
 
-$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$_POST['ilogin']."';");
+$pass1 = htmlspecialchars($_POST['ipass']);
+$pass2 = htmlspecialchars($_POST['ipass2']);
+$login = htmlspecialchars($_POST['ilogin']);
+$mail = htmlspecialchars($_POST['imail']);
+
+$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$login."';");
 $result = $log->fetch();
-if ($_POST['submit'] === 'Register' && $_POST['ipass'] && $_POST['ipass2'] && $_POST['ilogin'] && $_POST['imail']) {
-	if ($result['login'] !== $_POST['ilogin']) {
-		$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$_POST['imail']."';");
+
+if ($_POST['submit'] === 'Register' && $pass1 && $pass2 && $login && $mail) {
+	if ($result['login'] !== $login) {
+		$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$mail."';");
 		$result = $log->fetch();
-		if ($_POST['ipass'] === $_POST['ipass2']) {
-			if ($result['mail'] !== $_POST['imail']) {
-				$passs = hash(whirlpool, $_POST['ipass']);
+		if ($pass1 === $pass2) {
+			if ($result['mail'] !== $mail) {
+				$passs = hash(whirlpool, $pass1);
 				$defpdp = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAEUlEQVR42mP4TyRgGFVIX4UAI/uOgGWVNeQAAAAASUVORK5CYII=";
-				$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`, `validate`, `pdp`) VALUES ("'.$_POST['ilogin'].'", "'.$passs.'", "'.$_POST['imail'].'", "0", "'.$defpdp.'");');
+				$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`, `validate`, `pdp`) VALUES ("'.$login.'", "'.$passs.'", "'.$mail.'", "0", "'.$defpdp.'");');
 				$headers = 'From: InstaSnap' . "\r\n";
 				$headers.= "MIME-version: 1.0\n";
 				$headers.= "Content-type: text/html; charset= iso-8859-1\n";
-				$pass = hash(whirlpool, $_POST['imail']);
+				$pass = hash(whirlpool, $mail);
 				$message = "<html><body><a href='http://localhost:8080/camagru/validate.php?validate=".$pass."'>Activation</a></html></body>";
-				mail($_POST['imail'], "Activate your account", $message, $headers);
+				mail($mail, "Activate your account", $message, $headers);
 				$_SESSION['error'] = "An email will sent you.";
 				?>
 				<meta http-equiv="refresh" content='0;URL=index.php'/>
