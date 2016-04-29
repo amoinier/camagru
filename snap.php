@@ -79,7 +79,7 @@ if ($_SESSION['login']) {?>
 				$spost = $bdd->query("SELECT post FROM snap WHERE `img` LIKE '".$val['img']."';");
 				$spostres = $spost->fetch();
 			?>
-			<form class="" action="usesnap.php" method="post">
+			<form action="usesnap.php" method="post">
 				<input type="hidden" src="resources/delete-w.png" class="id" name="id" value="<?php echo $val['id'];?>">
 				<input class="deleteimg" type="image" src="resources/delete-w.png" name="deleteimg" value="delete">
 				<input class="sendimg" type="image" src="resources/send.png" name="sendimg" value="send">
@@ -106,6 +106,7 @@ else {
 }?>
 <br /><br /><br /><br /><br />
 	<div class="footersnap">
+		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
 	</div>
 		</body>
 	</html>

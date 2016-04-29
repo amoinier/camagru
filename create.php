@@ -14,7 +14,7 @@ if ($_POST['submit'] === 'Register' && $pass1 && $pass2 && $login && $mail) {
 	if ($result['login'] !== $login) {
 		$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$mail."';");
 		$result = $log->fetch();
-		if ($pass1 === $pass2) {
+		if ($pass1 === $pass2 && strlen($pass1) >= 6) {
 			if ($result['mail'] !== $mail) {
 				$passs = hash(whirlpool, $pass1);
 				$defpdp = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAEUlEQVR42mP4TyRgGFVIX4UAI/uOgGWVNeQAAAAASUVORK5CYII=";
@@ -27,7 +27,7 @@ if ($_POST['submit'] === 'Register' && $pass1 && $pass2 && $login && $mail) {
 				mail($mail, "Activate your account", $message, $headers);
 				$_SESSION['error'] = "An email will sent you.";
 				?>
-				<meta http-equiv="refresh" content='0;URL=login.php'/>
+				<meta http-equiv="refresh" content='0;URL=connect.php'/>
 				<?php
 			}
 			else {
@@ -38,7 +38,7 @@ if ($_POST['submit'] === 'Register' && $pass1 && $pass2 && $login && $mail) {
 			}
 		}
 		else {
-			$_SESSION['error'] = "Password do not match.";
+			$_SESSION['error'] = "Passwords don't match or too short (min. 6 characters).";
 			?>
 			<meta http-equiv="refresh" content='0;URL=register.php'/>
 			<?php

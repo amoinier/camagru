@@ -82,6 +82,7 @@ else {
 }?>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 	<div class="footersnap">
+		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
 	</div>
 </body>
 </html>

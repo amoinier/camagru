@@ -1,5 +1,5 @@
 <?php
-header('Location:snap.php');
+header('Location: snap.php');
 session_start();
 if (!file_exists("upload"))
 	mkdir("upload");

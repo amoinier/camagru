@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			console.log("Video capture error: ", error.code);
 		};
 
-	// Put video listeners into place
 	if (!document.getElementById('pathfile') || document.getElementById('pathfile').value === "") {
 	if(navigator.getUserMedia) { // Standard
 		navigator.getUserMedia(videoObj, function(stream) {

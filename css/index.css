@@ -1,6 +1,17 @@
 .clear {
 	clear: both;
 }
+
+#copyr {
+	margin-top: 3vw;
+	margin-right: 1vw;
+	float: right;
+	font-size: 0.5vw;
+	color: white;
+	font-family: helvetica;
+	font-style: italic;
+}
+
 #login {
 	text-align: center;
 	width: 10vw;

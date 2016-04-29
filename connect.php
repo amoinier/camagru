@@ -15,7 +15,13 @@ if (!$_SESSION['login']) {?>
 </div>
 <div id="reg"><a id="regtext" href="register.php">Register</a></div>
 <div class="footer">
+	<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
 </div>
 	</body>
 </html>
 <?php }
+else {
+	?>
+	<meta http-equiv="refresh" content='0;URL=index.php'/>
+	<?php
+}

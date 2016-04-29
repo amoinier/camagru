@@ -25,6 +25,6 @@ else if (htmlspecialchars($_POST['comment']) === 'comment' && htmlspecialchars($
 	$headers = 'From: InstaSnap'."\r\n";
 	$headers.= "MIME-version: 1.0\n";
 	$headers.= "Content-type: text/html; charset= iso-8859-1\n";
-	$message = "Hi ".htmlspecialchars($_POST['log']).", One of your photo received a new commentary! Let's go to see it!";
+	$message = "Hi ".htmlspecialchars($_POST['log']).", <html><body>You receive a new commentary, click <a href='http://localhost:8080/camagru/photo.php?login=".$_POST['log']."&idphoto=".$pid."'>here</a> to see it!</html></body>";
 	mail($findmailre['mail'], "You receive a new commentary", $message, $headers);
 }?>
