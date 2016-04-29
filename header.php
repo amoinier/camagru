@@ -6,6 +6,10 @@
 		<link rel="stylesheet" href="css/font.css" charset="utf-8">
 		<link rel="stylesheet" href="css/header.css" charset="utf-8">
 		<link rel="stylesheet" href="css/index.css" charset="utf-8">
+		<link rel="stylesheet" href="css/snap.css" charset="utf-8">
+		<link rel="stylesheet" href="css/users.css" charset="utf-8">
+		<link rel="stylesheet" href="css/editacc.css" charset="utf-8">
+		<link rel="stylesheet" href="css/regfor.css" charset="utf-8">
 		<title><?= $title?></title>
 	</head>
 	<body>

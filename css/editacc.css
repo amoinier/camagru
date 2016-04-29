@@ -1,0 +1,44 @@
+#prevacc {
+	color: white;
+	font-family: helvetica;
+	font-size: 1vw;
+	position: absolute;
+	margin-top: -1.6vw;
+	margin-left: 0vw;
+}
+
+#settings {
+	text-align: center;
+	width: 25vw;
+	margin: 0 auto;
+	margin-top: 1vw;
+	border-radius: 0.2vw;
+	padding: 0vw 2vw;
+	padding-top: 2vw;
+	margin-bottom: 0vw;
+	background: rgb(39, 7, 115);
+	border: 0.05vw solid black;
+	position: relative;
+}
+
+#choosepdp {
+	text-align: center;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	width: 40vw;
+	margin: 0 auto;
+	border-radius: 0.2vw;
+	background: rgb(39, 7, 115);
+	border: 0.05vw solid black;
+}
+
+.changepp {
+	display: inline-block;
+}
+
+.imgsett {
+	width: 8vw;
+	height: 6.5vw;
+	border-radius: 0.2vw;
+	border: 0.05vw solid black;
+}
