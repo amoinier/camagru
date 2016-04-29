@@ -23,14 +23,15 @@ html, body {
 		font-size: 20.56px;
 		float: right;
 		margin-right: 1vw;
+		margin-top: 95px;
         color: white;
         padding: 0.5vw 1vw;
         text-decoration: none;
         box-sizing: border-box;
-        border-radius: 0vw 0vw 0.3vw 0.3vw;
+        border-radius: 0.3vw 0.3vw 0vw 0vw;
         font-family: helvetica;
-		-webkit-transition-duration: 0.4s;
-		transition-duration: 0.4s;
+		-webkit-transition-duration: 0.2s;
+		transition-duration: 0.2s;
 }
 .button a:hover {
         background-color: rgb(75, 72, 130);
