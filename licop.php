@@ -1,5 +1,5 @@
 <?php
-header('Location: users.php?page='.htmlspecialchars($_POST['nbrpage']).'&login='.htmlspecialchars($_POST['log']));
+header('Location: photo.php?login='.htmlspecialchars($_POST['log']).'&idphoto='.htmlspecialchars($_POST['pid']));
 session_start();
 include('config/setup.php');
 date_default_timezone_set('Europe/Paris');

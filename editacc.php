@@ -1,5 +1,5 @@
 <?php  include('header.php');
-include('config/access.php');
+include('config/setup.php');
 if ($_SESSION['login']) {
 	$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$_SESSION['login']."';");
 	$result = $log->fetch();
@@ -55,11 +55,11 @@ if ($_SESSION['login']) {
 		<div id="settings">
 		<form action="edit.php" method="post">
 			<label for="fname">Old password:</label>
-			<input type="text" name="oldpwd" value=""></br >
+			<input type="password" name="oldpwd" value=""></br >
 			<label for="fname">New password:</label>
-			<input type="text" name="newpwd1" value=""></br >
+			<input type="password" name="newpwd1" value=""></br >
 			<label for="fname">Retape your new password:</label>
-			<input type="text" name="newpwd2" value="">
+			<input type="password" name="newpwd2" value="">
 			<input type="submit" name="Change" value="Change Password">
 		</form></br >
 	</div></br >

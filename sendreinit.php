@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config/access.php');
+include('config/setup.php');
 
 $log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$_POST['imail']."';");
 $result = $log->fetch();

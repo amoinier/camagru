@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('header.php');
-include('config/access.php');
+include('config/setup.php');
 
 $log = $bdd->query("SELECT * FROM `users`;");
 $result = $log->fetchAll();

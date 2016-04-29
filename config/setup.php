@@ -9,21 +9,45 @@ catch (PDOException $e)
 {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
-$createbdd->exec('CREATE DATABASE `db_snap`;');
+try {
+	$createbdd->exec('CREATE DATABASE IF NOT EXISTS `db_snap`;');
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : ' . $e->getMessage();
+}
 try
 {
 	$bdd = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$bdd->exec('USE db_snap;');
 }
 catch (PDOException $e)
 {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
 $defpdp = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAEUlEQVR42mP4TyRgGFVIX4UAI/uOgGWVNeQAAAAASUVORK5CYII=";
-$bdd->query("CREATE TABLE users (`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, `login` VARCHAR(45) NOT NULL, `passwd` VARCHAR(129) NOT NULL, `mail` VARCHAR(45) NOT NULL, `validate` INT NOT NULL, `pdp` LONGTEXT, `facebook` VARCHAR(255));");
-$bdd->query('CREATE TABLE snap (`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, `login` VARCHAR(45) NOT NULL, `date` DATETIME NOT NULL, `post` INT NOT NULL DEFAULT 0, `img` LONGTEXT NOT NULL);');
-$bdd->query('CREATE TABLE comment (`idphoto` INT NOT NULL, `login` VARCHAR(45) NOT NULL, `date` DATETIME NOT NULL, `text` LONGTEXT);');
-$bdd->query('CREATE TABLE `love` (`idphoto` INT NOT NULL, `login` VARCHAR(45) NOT NULL, `date` DATETIME NOT NULL, `like` INT);');
-
-$bdd->query('INSERT INTO users (`login`, `passwd`, `mail`, `validate`, `pdp`) VALUES ("root", "06948d93cd1e0855ea37e75ad516a250d2d0772890b073808d831c438509190162c0d890b17001361820cffc30d50f010c387e9df943065aa8f4e92e63ff060c", "amoinier@outlook.fr", "1", "'.$defpdp.'");');
+try {
+	$bdd->query("CREATE TABLE IF NOT EXISTS users (`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, `login` VARCHAR(45) NOT NULL, `passwd` VARCHAR(129) NOT NULL, `mail` VARCHAR(45) NOT NULL, `validate` INT NOT NULL, `pdp` LONGTEXT, `facebook` VARCHAR(255));");
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : ' . $e->getMessage();
+}
+try {
+	$bdd->query('CREATE TABLE IF NOT EXISTS snap (`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, `login` VARCHAR(45) NOT NULL, `date` DATETIME NOT NULL, `post` INT NOT NULL DEFAULT 0, `img` LONGTEXT NOT NULL);');
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : ' . $e->getMessage();
+}
+try {
+	$bdd->query('CREATE TABLE IF NOT EXISTS comment (`idphoto` INT NOT NULL, `login` VARCHAR(45) NOT NULL, `date` DATETIME NOT NULL, `text` LONGTEXT);');
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : ' . $e->getMessage();
+}
+try {
+	$bdd->query('CREATE TABLE IF NOT EXISTS `love` (`idphoto` INT NOT NULL, `login` VARCHAR(45) NOT NULL, `date` DATETIME NOT NULL, `like` INT);');
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : ' . $e->getMessage();
+}
 ?>

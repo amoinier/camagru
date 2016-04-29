@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config/access.php');
+include('config/setup.php');
 
 $pass1 = htmlspecialchars($_POST['ipass']);
 $pass2 = htmlspecialchars($_POST['ipass2']);
@@ -27,7 +27,7 @@ if ($_POST['submit'] === 'Register' && $pass1 && $pass2 && $login && $mail) {
 				mail($mail, "Activate your account", $message, $headers);
 				$_SESSION['error'] = "An email will sent you.";
 				?>
-				<meta http-equiv="refresh" content='0;URL=index.php'/>
+				<meta http-equiv="refresh" content='0;URL=login.php'/>
 				<?php
 			}
 			else {

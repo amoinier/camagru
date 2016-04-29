@@ -1,7 +1,7 @@
 <?php
 header('Location: editacc.php');
 session_start();
-include('config/access.php');
+include('config/setup.php');
 $log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$_SESSION['login']."';");
 $result = $log->fetch();
 if (htmlspecialchars($_POST['pdpch']) === 'pdpch' && is_numeric($_POST['pid'])) {

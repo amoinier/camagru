@@ -1,6 +1,6 @@
 <?php include('header.php');
 date_default_timezone_set('Europe/Paris');
-include('config/access.php');
+include('config/setup.php');
 include('base64.php');
 $filepath = "";
 if ($_SESSION['upload'] && $_SESSION['upload'] != -1) {
@@ -9,7 +9,7 @@ if ($_SESSION['upload'] && $_SESSION['upload'] != -1) {
 	$_SESSION['upload'] = 0;
 }
 else if ($_SESSION['upload'] == -1) {
-	echo "Un probleme est survenu lors de la lecture du fichier, veuille ressayer";
+	echo "<div id='errorupload'><div class='err'>Un probleme est survenu lors de la lecture du fichier, veuille ressayer</div></div>";
 	$_SESSION['upload'] = 0;
 }
 if ($_SESSION['login']) {?>
@@ -103,17 +103,9 @@ else {
 	?>
 	<meta http-equiv="refresh" content='0;URL=index.php'/>
 	<?php
-}
-if (count($result) < 4) {?>
-<div class="footer">
-</div>
-	</body>
-</html>
-<?php }
-else { ?>
+}?>
+<br /><br /><br /><br /><br />
 	<div class="footersnap">
 	</div>
 		</body>
 	</html>
-<?php
-} ?>

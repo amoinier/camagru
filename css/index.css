@@ -600,3 +600,19 @@ input[type=submit]:hover {
 	border: 0.05vw solid black;
 	position: relative;
 }
+
+#errorupload {
+	text-align: center;
+	width: 10vw;
+	height: 0vw;
+	margin: 0 auto;
+	margin-top: 28.85vw;
+	margin-left: 54.5vw;
+	border-radius: 0.2vw;
+	padding: 0vw 2vw;
+	padding-top: 1vw;
+	padding-bottom: 3.5vw;
+	background: rgb(39, 7, 115);
+	border: 0.05vw solid black;
+	position: absolute;
+}

@@ -2,7 +2,7 @@
 header('Location: snap.php');
 session_start();
 date_default_timezone_set('Europe/Paris');
-include('config/access.php');
+include('config/setup.php');
 if ($_POST['deleteimg'] === 'delete' && is_numeric($_POST['id'])) {
 	$bdd->query('DELETE FROM `snap` WHERE `id` LIKE "'.$_POST['id'].'" AND `login` LIKE "'.$_SESSION['login'].'";');
 }

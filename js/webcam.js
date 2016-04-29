@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		};
 
 	// Put video listeners into place
+	if (!document.getElementById('pathfile') || document.getElementById('pathfile').value === "") {
 	if(navigator.getUserMedia) { // Standard
 		navigator.getUserMedia(videoObj, function(stream) {
 			video.src = stream;
@@ -21,12 +22,13 @@ window.addEventListener("DOMContentLoaded", function() {
 			video.play();
 		}, errBack);
 	}
-	else if(navigator.mozGetUserMedia) { // Firefox-prefixed
-		navigator.mozGetUserMedia(videoObj, function(stream){
+	else if(navigator.mediaDevices.getUserMedia) { // Firefox-prefixed
+		navigator.mediaDevices.getUserMedia(videoObj, function(stream){
 			video.src = window.URL.createObjectURL(stream);
 			video.play();
 		}, errBack);
 	}
+}
 
 	var take = 0;
 	// Trigger photo take

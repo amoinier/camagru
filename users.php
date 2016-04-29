@@ -1,6 +1,6 @@
 <?php  include('header.php');
-include('config/access.php');
-if ($_SESSION['login'] && htmlspecialchars($_GET['login'])) {
+include('config/setup.php');
+if (htmlspecialchars($_GET['login'])) {
 	$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".htmlspecialchars($_GET['login'])."';");
 	$result = $log->fetch();
 	if ($result) {
@@ -40,8 +40,10 @@ if ($_SESSION['login'] && htmlspecialchars($_GET['login'])) {
 						}
 						?>
 						<form action="licou.php" method="post">
-							<div class='imgind'><img class='max' src="<?php echo $val['img'];?>"/></div>
-							<input class="heartind" type="image" src="<?php echo $heart;?>" name="like" value="like">
+							<div class='imgind'><a href="photo.php?login=<?php echo $val['login'];?>&idphoto=<?php echo $val['id'];?>"><img class='max' src="<?php echo $val['img'];?>"/></a></div>
+							<?php if ($_SESSION['login']) { ?>
+								<input class="heartind" type="image" src="<?php echo $heart;?>" name="like" value="like">
+							<?php } ?>
 							<span class='nbrlike'><?php echo count($nbrlikef); if (count($nbrlikef) < 2) {$people = " people";} else {$people = " peoples";} echo $people;?> like this photo.</span>
 							<input type="hidden" name="pid" value="<?php echo htmlspecialchars($val['id']);?>">
 							<input type="hidden" name="plike" value="<?php echo $likef['like'];?>">
@@ -49,11 +51,15 @@ if ($_SESSION['login'] && htmlspecialchars($_GET['login'])) {
 							<input type="hidden" name="log" value="<?php echo htmlspecialchars($val['login']);?>">
 						</form>
 						<form action="licou.php" method="post">
-							<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
+							<?php if ($_SESSION['login']) { ?>
+								<input class="commentind" type="image" src="resources/comment.png" name="comment" value="comment">
+							<?php } ?>
 							<input type="hidden" name="pid" value="<?php echo htmlspecialchars($val['id']);?>">
 							<input type="hidden" name="log" value="<?php echo htmlspecialchars($val['login']);?>">
 							<input type="hidden" name="nbrpage" value="<?php echo htmlspecialchars($_GET['page']);?>">
-							<input id="textcom" type="text" name="sendcom" value="">
+							<?php if ($_SESSION['login']) { ?>
+								<input id="textcom" type="text" name="sendcom" value="">
+							<?php } ?>
 						</form>
 						<?php $comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".htmlspecialchars($val['id']).";");
 						$comment = $comm->fetchall();
@@ -95,7 +101,9 @@ if ($_SESSION['login'] && htmlspecialchars($_GET['login'])) {
 			<?php }
 		}
 else {
-	echo "OK";
+	?>
+	<meta http-equiv="refresh" content='0;URL=index.php'/>
+	<?php
 }
 if (count($snapnb) < 2) { ?>
 	<div class="footer">

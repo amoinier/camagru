@@ -1,7 +1,7 @@
 <?php
 header('Location: index.php?page='.htmlspecialchars($_POST['nbrpage']));
 session_start();
-include('config/access.php');
+include('config/setup.php');
 date_default_timezone_set('Europe/Paris');
 $pid = htmlspecialchars($_POST['pid']);
 $plike = htmlspecialchars($_POST['plike']);
