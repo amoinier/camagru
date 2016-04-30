@@ -1,0 +1,79 @@
+#prevacc {
+	color: white;
+	font-family: helvetica;
+	font-size: 25.7px;
+	position: absolute;
+	margin-top: -41.12px;
+}
+
+#logset {
+	height: 30.84px;
+	width: 30.84px;
+}
+
+#blpdp {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 25.7px;
+	margin-bottom: -70px;
+	width: 359.8px;
+	padding-top: 54.1px;
+	padding-bottom: 257px;
+	border-radius: 5.14px;
+	background: rgb(39, 7, 115);
+	border: 1.285px solid black;
+	position: relative;
+}
+
+#sett {
+	position: absolute;
+	margin-top: -38.55px;
+	margin-left: -38.55px;
+}
+
+#pdp {
+	width: 257px;
+	height: 218.45px;
+	border-radius: 5.14px;
+	border: 1.285px solid black;
+}
+
+#linkface {
+	color: white;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	font-family: helvetica;
+}
+
+.count {
+	margin-top: 25.7px;
+	margin-right: 25.7px;
+	margin-left: 25.7px;
+	width: 48.83px;
+	height: 48.83px;
+}
+
+#facebook {
+	text-align: center;
+	border-radius: 5.14px;
+	background-color: rgb(16, 52, 128);
+	margin-top: 0.5vw;
+	padding: 12.85px 12.85px;
+	margin-left: 4vw;
+	width: 128.5px;
+	border: 1.285px solid black;
+}
+
+#facebook:hover {
+	background-color: rgb(59, 89, 152);
+}
+
+#snapnb {
+	position: absolute;
+	margin-top: 77.1px;
+	margin-left: -55.255px;
+	color: white;
+	font-family: helvetica;
+	font-size: 17.99px;
+}

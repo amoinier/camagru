@@ -106,7 +106,8 @@ else {
 	<?php
 }
 if (count($snapnb) < 2) { ?>
-	<div class="footer">
+</br ></br >
+	<div class="footersnap">
 		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
 	</div>
 </body>

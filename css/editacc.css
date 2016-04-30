@@ -1,26 +1,26 @@
 #settings {
 	text-align: center;
-	width: 25vw;
+	width: 642.5px;
 	margin: 0 auto;
-	margin-top: 1vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 2vw;
-	margin-bottom: 0vw;
+	margin-top: 25.7px;
+	border-radius: 5.41px;
+	padding: 0 54.1px;
+	padding-top: 54.1px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
 #choosepdp {
 	text-align: center;
-	padding-top: 1vw;
-	padding-bottom: 1vw;
-	width: 40vw;
+	padding-top: 25.7px;
+	padding-bottom: 25.7px;
+	width: 1028px;
 	margin: 0 auto;
-	border-radius: 0.2vw;
+	margin-top: 50px;
+	border-radius: 5.41px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 }
 
 .changepp {
@@ -28,8 +28,8 @@
 }
 
 .imgsett {
-	width: 8vw;
-	height: 6.5vw;
-	border-radius: 0.2vw;
-	border: 0.05vw solid black;
+	width: 200px;
+	height: 162px;
+	border-radius: 5.41px;
+	border: 1.285px solid black;
 }

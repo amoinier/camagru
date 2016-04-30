@@ -19,7 +19,7 @@
 	margin-bottom: 1vw;
 	margin-top: 1vw;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 }
 
 #video {
@@ -27,11 +27,11 @@
 	width: 642.5px;
 	height: 514px;
 	margin: 0 auto;
-	margin-top: 4.5vw;
+	margin-top: 102.8px;
 	padding: 51.4px 51.4px;
-	border-radius: 0.2vw;
+	border-radius: 5.14px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
@@ -40,11 +40,11 @@
 	width: 642.5px;
 	height: 488.3px;
 	margin: 0 auto;
-	margin-top: 4.5vw;
+	margin-top: 4vw;
 	padding: 64.25px 51.4px;
 	border-radius: 0.2vw;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
@@ -57,7 +57,7 @@
 	padding: 2vw 2vw;
 	border-radius: 0.2vw;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
@@ -66,18 +66,18 @@
    height: 38.55px;
    width: 257px;
    margin-left: 38.5%;
-   margin-top: 0.4vw;
-   border-radius: 0.1vw;
-   padding-left: 1vw;
-   padding-right: 1.2vw;
-   padding-top: 0.8vw;
-   padding-bottom: 0.8vw;
+   margin-top: 10.28px;
+   border-radius: 2.57px;
+   padding-left: 25.7px;
+   padding-right: 30.84px;
+   padding-top: 20.56px;
+   padding-bottom: 20.56px;
    background: rgb(39, 7, 115);
-   border: 0.05vw solid black;
+   border: 1.285px solid black;
 }
 
 #select-filter select {
-   border: 0.1vw solid #ccc;
+   border: 2.57px solid #ccc;
    font-size: 17.99px;
    height: 38.55px;
    width: 257px;
@@ -88,10 +88,10 @@
     background-color: white;
     color: rgb(39, 7, 115);
 	font-size: 20.56px;
-    padding: 0.6vw 3.5vw;
-    margin: 0.4vw 0;
-    border-radius: 0.1vw;
-	border: 0.05vw solid black;
+    padding: 15.42px 89.95px;
+    margin: 10.28px 0;
+    border-radius: 2.57px;
+	border: 1.285px solid black;
     cursor: pointer;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
@@ -106,10 +106,10 @@
     background-color: white;
     color: rgb(39, 7, 115);
 	font-size: 20.56px;
-    padding: 0.6vw 3.5vw;
-    margin: 0.4vw 0;
-    border-radius: 0.1vw;
-	border: 0.05vw solid black;
+    padding: 15.42px 89.95px;
+    margin: 10.28px 0;
+    border-radius: 2.57px;
+	border: 1.285px solid black;
     cursor: pointer;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
@@ -161,22 +161,22 @@
 .min {
 	width: 257px;
 	height: 205.6px;
-	margin-bottom: 1vw;
+	margin-bottom: 25.7px;
 	border-radius: 0.2vw;
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 }
 
 #errorupload {
 	text-align: center;
 	width: 257px;
 	margin: 0 auto;
-	margin-top: 28.85vw;
-	margin-left: 54.5vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 1vw;
-	padding-bottom: 3.5vw;
+	margin-top: 30px;
+	margin-bottom: -80px;
+	border-radius: 5.14px;
+	padding: 0 51.4px;
+	padding-top: 25.7px;
+	padding-bottom: 40px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
-	position: absolute;
+	border: 1.285px solid black;
+	position: relative;
 }
