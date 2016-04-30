@@ -104,7 +104,6 @@ else {
 	<meta http-equiv="refresh" content='0;URL=index.php'/>
 	<?php
 }?>
-<br /><br /><br /><br /><br />
 	<div class="footersnap">
 		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
 	</div>

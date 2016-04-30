@@ -12,10 +12,10 @@
 	text-align: center;
 	float: right;
 	width: 257px;
-	padding-top: 1vw;
-	padding-left: 1vw;
-	padding-right: 1vw;
-	border-radius: 0.2vw;
+	padding-top: 25.7px;
+	padding-left: 25.7px;
+	padding-right: 25.7px;
+	border-radius: 5.14px;
 	margin-bottom: 1vw;
 	margin-top: 1vw;
 	background: rgb(39, 7, 115);
@@ -28,7 +28,7 @@
 	height: 514px;
 	margin: 0 auto;
 	margin-top: 4.5vw;
-	padding: 2vw 2vw;
+	padding: 51.4px 51.4px;
 	border-radius: 0.2vw;
 	background: rgb(39, 7, 115);
 	border: 0.05vw solid black;
@@ -41,7 +41,7 @@
 	height: 488.3px;
 	margin: 0 auto;
 	margin-top: 4.5vw;
-	padding: 2.5vw 2vw;
+	padding: 64.25px 51.4px;
 	border-radius: 0.2vw;
 	background: rgb(39, 7, 115);
 	border: 0.05vw solid black;
@@ -65,7 +65,7 @@
    background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
    height: 38.55px;
    width: 257px;
-   margin-left: 23.65vw;
+   margin-left: 38.5%;
    margin-top: 0.4vw;
    border-radius: 0.1vw;
    padding-left: 1vw;
@@ -122,13 +122,13 @@
 .deleteimg {
 	width: 25.7px;
 	height: 25.7px;
-	margin-right: 10vw;
+	margin-right: 90%;
 }
 .sendimg {
 	width: 23.13px;
 	height: 23.13px;
-	margin-top: -1.1vw;
-	margin-left: 4vw;
+	margin-top: -25px;
+	margin-left: 105px;
 	position: absolute;
 }
 
@@ -137,12 +137,12 @@
 	color: white;
 	font-family: helvetica;
 	background: rgb(34, 166, 2);
-	border-top-right-radius: 0.1vw;
-	border-top-left-radius: 0.1vw;
-	padding: 0.3vw 0.3vw;
+	border-top-right-radius: 2.57px;
+	border-top-left-radius: 2.57px;
+	padding: 7.71px 7.71px;
 	position: absolute;
-	margin-left: 3.7vw;
-	margin-top: -1.05vw;
+	margin-left: 100px;
+	margin-top: -1%;
 }
 
 #npublish {
@@ -150,12 +150,12 @@
 	color: white;
 	font-family: helvetica;
 	background: rgb(138, 12, 12);
-	border-top-right-radius: 0.1vw;
-	border-top-left-radius: 0.1vw;
-	padding: 0.3vw 0.3vw;
+	border-top-right-radius: 2.57px;
+	border-top-left-radius: 2.57px;
+	padding: 7.71px 7.71px;
 	position: absolute;
-	margin-left: 3.0vw;
-	margin-top: -1.05vw;
+	margin-left: 77.1px;
+	margin-top: -26.985px;
 }
 
 .min {
