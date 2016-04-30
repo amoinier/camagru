@@ -13,7 +13,7 @@ if (htmlspecialchars($result['mail']) === htmlspecialchars($_POST['imail'])) {
 	mail(htmlspecialchars($_POST['imail']), "Change your password", $message, $headers);
 	$_SESSION['error'] = "An email will sent you to change your password.";
 	?>
-	<meta http-equiv="refresh" content='0;URL=index.php'/>
+	<meta http-equiv="refresh" content='0;URL=reinit.php'/>
 	<?php
 }
 else {

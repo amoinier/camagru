@@ -6,7 +6,7 @@ html, body {
 	width: 100%;
 	height: 128.5px;
 	background: rgb(39, 7, 115);
-	border-bottom: 0.05vw solid black;
+	border-bottom: 1.285px solid black;
 }
 
 #title {
@@ -14,21 +14,22 @@ html, body {
 	font-size: 97.66px;
 	position: absolute;
 	margin-left: 18vw;
-	margin-top: 0.7vw;
+	margin-top: 17.99px;
 	font-family: "aomega";
 }
 
 .button a {
         background-color: rgb(39, 7, 115);
-		font-size: 20.56px;
+		font-size: 18px;
 		float: right;
-		margin-right: 1vw;
-		margin-top: 95px;
+		margin-right: -5vw;
+		margin-left: 5vw;
+		margin-top: 99px;
         color: white;
         padding: 0.5vw 1vw;
         text-decoration: none;
         box-sizing: border-box;
-        border-radius: 0.3vw 0.3vw 0vw 0vw;
+        border-radius: 0.3vw 0.3vw 0 0;
         font-family: helvetica;
 		-webkit-transition-duration: 0.2s;
 		transition-duration: 0.2s;
@@ -43,24 +44,24 @@ html, body {
 
 .footersnap {
 	width: 100%;
-	height: 128.5px;
+	height: 119px;
 	background: rgb(39, 7, 115);
 	bottom: 0;
-	border-top: 0.05vw solid black;
+	border-top: 1.285px solid black;
 }
 
 .footer {
 	width: 100%;
-	height: 128.5px;
+	height: 119px;
 	background: rgb(39, 7, 115);
 	position: absolute;
 	bottom: 0;
-	border-top: 0.05vw solid black;
+	border-top: 1.285px solid black;
 }
 
 #copyr {
-	margin-top: 3vw;
-	margin-right: 1vw;
+	margin-top: 77.1px;
+	margin-right: 25.7px;
 	float: right;
 	font-size: 12.85px;
 	color: white;

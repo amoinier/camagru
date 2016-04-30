@@ -1,59 +1,58 @@
 #login {
 	text-align: center;
-	width: 10vw;
-	height: 5vw;
+	width: 257px;
+	height: 128.5px;
 	margin: 0 auto;
-	margin-top: 4.5vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 1vw;
-	padding-bottom: 7vw;
+	margin-top: 115.65px;
+	border-radius: 5.14px;
+	padding: 0 51.4px;
+	padding-top: 25.7px;
+	padding-bottom: 179.9px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
 #register {
 	text-align: center;
-	width: 10vw;
-	height: 5vw;
+	width: 257px;
+	height: 128.5px;
 	margin: 0 auto;
-	margin-top: 4.5vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 1vw;
-	padding-bottom: 13vw;
+	margin-top: 115.65px;
+	border-radius: 5.14px;
+	padding: 0vw 51.4px;
+	padding-top: 25.7px;
+	padding-bottom: 334.1px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
 #reg {
 	text-align: center;
-	width: 10vw;
-	height: 3vw;
+	width: 257px;
+	height: 77.1px;
 	margin: 0 auto;
-	margin-top: 0.7vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 2vw;
+	margin-top: 17.99px;
+	border-radius: 5.14px;
+	padding: 0vw 51.4px;
+	padding-top: 51.4px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
 #regtext {
 	text-decoration:none;
 	font-family: helvetica;
-	width: 100%;
     background-color: white;
     color: rgb(39, 7, 115);
-	font-size: 0.8vw;
-    padding: 0.6vw 3.5vw;
-    margin: 0.4vw 0;
-	margin-bottom: 1vw;
-    border-radius: 0.1vw;
-	border: 0.05vw solid black;
+	font-size: 20.56px;
+    padding: 15.42px 89.95px;
+    margin: 10.28px 0;
+	margin-bottom: 25.7px;
+    border-radius: 2.57px;
+	border: 1.285px solid black;
     cursor: pointer;
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
@@ -69,18 +68,18 @@
 
 #validate {
 	text-align: center;
-	width: 10vw;
-	height: 3vw;
+	width: 257px;
+	height: 77.1px;
 	margin: 0 auto;
-	margin-top: 9vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 2vw;
-	padding-bottom: 1.5vw;
+	margin-top: 231.3px;
+	border-radius: 5.14px;
+	padding: 0vw 51.4px;
+	padding-top: 51.4px;
+	padding-bottom: 38.55px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
-	font-size: 0.8vw;
+	font-size: 20.56px;
 	color: white;
 	font-family: helvetica;
 }

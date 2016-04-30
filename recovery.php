@@ -20,7 +20,7 @@ if (!$_GET['ok']) {
 					<label for="password">Retape password</label>
 					<input type="password" id='ipass2' name="ipass2" value="">
 					<input type="hidden" id='imail' name='imail' value=<?php echo htmlspecialchars($val['mail']);?>>
-					<input type="hidden" id="recovery" name="recovery" value="<?php echo "string"; $_GET['recovery'];?>">
+					<input type="hidden" id="recovery" name="recovery" value="<?php echo $_GET['recovery'];?>">
 					<input type="submit" name="submit" value="Change">
 				</form></div>
 				<?php if ($_SESSION['error']) { ?>

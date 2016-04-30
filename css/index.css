@@ -3,8 +3,6 @@
 }
 
 .delete {
-background:url(delete.png) no-repeat;
-border:0;
 color:#fff;
 font-size:12px;
 font-weight:lighter;
@@ -14,104 +12,103 @@ width:117px;
 
 .heartind {
 	position: absolute;
-	margin-top: -6.1vw;
-	margin-left: -12.5vw;
-	width: 1.8vw;
-	height: 1.8vw;
+	margin-top: -156.77px;
+	margin-left: -321.25px;
+	width: 46.26px;
+	height: 46.26px;
 }
 
 .commentind {
 	position: absolute;
-	margin-top: -4.4vw;
-	margin-left: -12.5vw;
-	width: 1.8vw;
-	height: 1.8vw;
+	margin-top: -113.08px;
+	margin-left: -321.25px;
+	width: 46.26px;
+	height: 46.26px;
 }
 
 .max {
-	margin-bottom: 6vw;
-	border-radius: 0.2vw;
-	border: 0.05vw solid black;
-	width: 25vw;
-	height: 19vw;
+	margin-bottom: 154.2px;
+	border-radius: 5.14px;
+	border: 1.285px solid black;
+	width: 642.5px;
+	height: 488.3px;
 }
 
 #allphoto {
 	text-align: center;
-	width: 25vw;
+	width: 642.5px;
 	margin: 0 auto;
-	margin-top: 4.5vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 2vw;
-	margin-bottom: 0vw;
+	margin-top: 115.65px;
+	border-radius: 5.14px;
+	padding: 0 51.4px;
+	padding-top: 51.4px;
+	margin-bottom: 0;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
 #page {
 	text-align: center;
-	width: 10vw;
-	height: 2vw;
+	width: 257px;
+	height: 51.4px;
 	margin: 0 auto;
-	margin-top: 0.8vw;
-	margin-bottom: 1vw;
-	border-radius: 0.2vw;
-	padding: 0vw 2vw;
-	padding-top: 1vw;
-	padding-bottom: 1vw;
+	margin-top: 20.56px;
+	margin-bottom: 25.7px;
+	border-radius: 5.14px;
+	padding: 0 51.4px;
+	padding-top: 25.7px;
+	padding-bottom: 25.7px;
 	background: rgb(39, 7, 115);
-	border: 0.05vw solid black;
+	border: 1.285px solid black;
 	position: relative;
 }
 
 input[type=text] {
 	width: 231.3px;
-	height: 0.2vw;
-	padding: 0.45vw 0.45vw;
-	margin-bottom: 1vw;
-	border: 0.05vw solid black;
-	border-radius: 0.1vw;
+	height: 5.14px;
+	padding: 11.565px 11.565px;
+	margin-bottom: 25.7px;
+	border: 1.285px solid black;
+	border-radius: 2.57px;
 }
 
 input[type=password] {
-	width: 9vw;
-	height: 0.2vw;
-	padding: 0.45vw 0.45vw;
-	margin-bottom: 1vw;
-	border: 0.05vw solid black;
-	border-radius: 0.1vw;
+	width: 231.3px;
+	height: 5.14px;
+	padding: 11.565px 11.565px;
+	margin-bottom: 25.7px;
+	border: 1.285px solid black;
+	border-radius: 2.57px;
 }
 
 
 input[type=email] {
-	width: 9vw;
-	height: 0.2vw;
-	padding: 0.45vw 0.45vw;
-	margin-bottom: 1vw;
-	border: 0.05vw solid black;
-	border-radius: 0.1vw;
+	width: 231.3px;
+	height: 5.14px;
+	padding: 11.565px 11.565px;
+	margin-bottom: 25.7px;
+	border: 1.285px solid black;
+	border-radius: 2.57px;
 }
 
 label {
-	font-size: 0.8vw;
+	font-size: 20.56px;
 	color: white;
 	font-family: helvetica;
 }
 
 input[type=submit] {
-    width: 100%;
     background-color: white;
     color: rgb(39, 7, 115);
 	font-size: 20.56px;
-    padding: 0.6vw 3.5vw;
-    margin: 0.4vw 0;
-    border-radius: 0.1vw;
-	border: 0.05vw solid black;
+    padding: 15.42px 89.95px;
+    margin: 10.28px 0;
+    border-radius: 2.57px;
+	border: 1.285px solid black;
     cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
 }
 
 input[type=submit]:hover {
@@ -119,18 +116,18 @@ input[type=submit]:hover {
 }
 
 .err {
-	margin-top: 0.5vw;
-	font-size: 0.6vw;
+	margin-top: 12.85px;
+	font-size: 15.42px;
 	color: white;
 	font-family: helvetica;
 }
 
 .page-nbr {
-	font-size: 1vw;
+	font-size: 25.7px;
 	color: white;
 	font-family: helvetica;
-	margin-top: 0.3vw;
-	margin-left: -0.1vw;
+	margin-top: 7.71px;
+	margin-left: -2.57px;
 	position: absolute;
 }
 
@@ -211,11 +208,6 @@ input[type=submit]:hover {
 	position: absolute;
 	margin-left: -10.5vw;
 	margin-top: -4.2vw;
-}
-
-#logset {
-	height: 1.2vw;
-	width: 1.2vw;
 }
 
 #errorbox {
