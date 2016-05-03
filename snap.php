@@ -66,7 +66,6 @@ if ($_SESSION['login']) {?>
 							unlink($file);
 						}
 					}
-					rmdir("upload");
 				}
 			}
 		}
