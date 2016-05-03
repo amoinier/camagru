@@ -4,7 +4,7 @@ include('config/setup.php');
 
 $log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".htmlspecialchars($_POST['ilogin'])."';");
 $result = $log->fetch();
-if ($_POST['submit'] === 'Connect' && htmlspecialchars($_POST['ilogin']) && htmlspecialchars($_POST['ipass'])) {
+if (htmlspecialchars($_POST['submit']) === 'Connect' && htmlspecialchars($_POST['ilogin']) && htmlspecialchars($_POST['ipass'])) {
 	if (htmlspecialchars($result['login']) === htmlspecialchars($_POST['ilogin']))
 	{
 		if (hash(whirlpool, htmlspecialchars($_POST['ipass'])) === htmlspecialchars($result['passwd'])) {

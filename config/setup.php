@@ -2,11 +2,10 @@
 include('database.php');
 try
 {
-	$createbdd = new PDO('mysql:host=localhost;charset=utf8', $DB_USER, $DB_PASSWORD);
+	$createbdd = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 	$createbdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch (PDOException $e)
-{
+catch (PDOException $e) {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
 try {
@@ -15,14 +14,12 @@ try {
 catch (PDOException $e) {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
-try
-{
+try {
 	$bdd = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$bdd->exec('USE db_snap;');
 }
-catch (PDOException $e)
-{
+catch (PDOException $e) {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
 $defpdp = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAEUlEQVR42mP4TyRgGFVIX4UAI/uOgGWVNeQAAAAASUVORK5CYII=";

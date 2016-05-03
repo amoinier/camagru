@@ -10,7 +10,7 @@ $mail = htmlspecialchars($_POST['imail']);
 $log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$login."';");
 $result = $log->fetch();
 
-if ($_POST['submit'] === 'Register' && $pass1 && $pass2 && $login && $mail) {
+if (htmlspecialchars($_POST['submit']) === 'Register' && $pass1 && $pass2 && $login && $mail) {
 	if ($result['login'] !== $login) {
 		$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$mail."';");
 		$result = $log->fetch();

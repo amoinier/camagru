@@ -31,7 +31,7 @@ if (!$_GET['ok']) {
 			}
 		}
 	}
-else {
+else if ($_GET['ok'] === 'ok') {
 	$if = 1;
 	?>
 	<div id="validate">Your password is updated</div>
@@ -42,5 +42,7 @@ if ($if == 0) {
 ?>
 <div id="validate">The link is dead ...</div>
 <meta http-equiv="refresh" content='5;URL=index.php'/>
-<?php }
+<?php } ?>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<?php
 include('footer.php');?>
