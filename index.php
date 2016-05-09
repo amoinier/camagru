@@ -76,7 +76,7 @@ if (count($photonbr) / 5 + 1 >= htmlspecialchars($_GET['page']) && count($photon
 <?php
 }
 if (count($result) < 2) { ?>
-	<div class="footer">
+	<div class="footerind">
 		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
 	</div>
 </body>
@@ -84,7 +84,7 @@ if (count($result) < 2) { ?>
 }
 else {?>
 	<div class="footersnap">
-		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
+		<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
 	</div>
 </body>
 </html>

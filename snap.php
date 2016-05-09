@@ -9,7 +9,7 @@ if ($_SESSION['upload'] && $_SESSION['upload'] != -1) {
 	$_SESSION['upload'] = 0;
 }
 else if ($_SESSION['upload'] == -1) {
-	echo "<div id='errorupload'><div class='err'>Un probleme est survenu lors de la lecture du fichier, veuille ressayer</div></div>";
+	echo "<div id='errorupload'><div class='err'>Upload failed, please retry</div></div>";
 	$_SESSION['upload'] = 0;
 }
 if ($_SESSION['login']) {?>
@@ -38,7 +38,7 @@ if ($_SESSION['login']) {?>
 			<?php if ($filepath === "") { ?>
 			<form method="POST" action="upload.php" enctype="multipart/form-data">
 				<input type="file" name="upload-photo">
-				<input type="submit" name="envoyer" value="Envoyer le fichier">
+				<input type="submit" name="envoyer" value="Send file">
 			</form>
 			<?php } ?>
 		</div>
@@ -104,7 +104,7 @@ else {
 	<?php
 }?>
 	<div class="footersnap">
-		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
+		<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
 	</div>
 		</body>
 	</html>

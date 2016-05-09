@@ -2,15 +2,17 @@
 session_start();
 include('config/setup.php');
 
-$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$_POST['imail']."';");
+$mail = sqlapo(htmlspecialchars($_POST['imail']));
+
+$log = $bdd->query("SELECT * FROM users WHERE `mail` LIKE '".$mail."';");
 $result = $log->fetch();
-if (htmlspecialchars($result['mail']) === htmlspecialchars($_POST['imail'])) {
+if (htmlspecialchars($result['mail']) === $mail) {
 	$headers = 'From: InstaSnap' . "\r\n";
 	$headers.= "MIME-version: 1.0\n";
 	$headers.= "Content-type: text/html; charset= iso-8859-1\n";
-	$pass = hash(whirlpool, htmlspecialchars($_POST['imail']));
-	$message = "<html><body><a href='http://localhost:8080/camagru/recovery.php?recovery=".$pass."'>Recovery</a></html></body>";
-	mail(htmlspecialchars($_POST['imail']), "Change your password", $message, $headers);
+	$pass = hash(whirlpool, $mail);
+	$message = "<html><body><a href='http://localhost:8080".substr($_SERVER['PHP_SELF'], 0, strlen($_SERVER['PHP_SELF']) - strlen(strrchr($_SERVER['PHP_SELF'], "/")))."/recovery.php?recovery=".$pass."'>Recovery</a></html></body>";
+	mail($mail, "Change your password", $message, $headers);
 	$_SESSION['error'] = "An email will sent you to change your password.";
 	?>
 	<meta http-equiv="refresh" content='0;URL=reinit.php'/>

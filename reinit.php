@@ -9,6 +9,9 @@ if (!$_SESSION['login']) {?>
 	<div class="err"><?php echo $_SESSION['error'];
 	$_SESSION['error'] = "";?></div>
 </div>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<?php } include('footer.php');
-?>
+<?php }?>
+<div class="footerind">
+	<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
+</div>
+	</body>
+</html>

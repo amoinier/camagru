@@ -43,6 +43,8 @@ if ($if == 0) {
 <div id="validate">The link is dead ...</div>
 <meta http-equiv="refresh" content='5;URL=index.php'/>
 <?php } ?>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<?php
-include('footer.php');?>
+<div class="footerind">
+	<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
+</div>
+	</body>
+</html>

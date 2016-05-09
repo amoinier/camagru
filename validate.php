@@ -25,4 +25,9 @@ if (!$i) {
 <meta http-equiv="refresh" content='5;URL=index.php'/>
 <?php
 }
-include('footer.php');?>
+?>
+<div class="footerind">
+	<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
+</div>
+</body>
+</html>

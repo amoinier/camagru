@@ -1,7 +1,7 @@
 <?php  include('header.php');
 include('config/setup.php');
-if (htmlspecialchars($_GET['login'])) {
-	$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".htmlspecialchars($_GET['login'])."';");
+if (sqlapo(htmlspecialchars($_GET['login']))) {
+	$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".sqlapo(htmlspecialchars($_GET['login']))."';");
 	$result = $log->fetch();
 	if ($result) {
 		$page = 0;
@@ -14,8 +14,8 @@ if (htmlspecialchars($_GET['login'])) {
 		$countss = $counts->fetchAll();
 		?>
 		<div id="blpdp">
-			<span id="prevacc"><?php echo htmlspecialchars($_GET['login']); ?></span>
-			<?php if ($_SESSION['login'] === htmlspecialchars($_GET['login'])) { ?>
+			<span id="prevacc"><?php echo sqlapo(htmlspecialchars($_GET['login'])); ?></span>
+			<?php if ($_SESSION['login'] === sqlapo(htmlspecialchars($_GET['login']))) { ?>
 			<a id="sett" href="editacc.php"><img id="logset" src="resources/settings.png"/></a>
 			<?php } ?>
 			<img id="pdp" src="<?php echo $result['pdp'];?>"/>
@@ -90,7 +90,7 @@ if (htmlspecialchars($_GET['login'])) {
 				 <?php if ($page / 5 + 2 < (count($snapnbr) / 5) + 1) { ?>
 				 <input class="pagel" type="image" src="resources/pagel.png" name="page" value="<?php if ($page / 5 + 2 <= (count($snapnbr) / 5) + 1) {echo $page / 5 + 2;}?>">
 				 <?php } ?>
-				 <input type="hidden" name="login" value="<?php echo htmlspecialchars($_GET['login']);?>">
+				 <input type="hidden" name="login" value="<?php echo sqlapo(htmlspecialchars($_GET['login']));?>">
 			</form>
 			</div>
 			<?php
@@ -107,8 +107,8 @@ else {
 }
 if (count($snapnb) < 2) { ?>
 </br ></br >
-	<div class="footersnap">
-		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
+	<div class="footerind">
+		<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
 	</div>
 </body>
 </html><?php
@@ -117,7 +117,7 @@ else {?>
 	<br />
 	<br />
 	<div class="footersnap">
-		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
+		<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
 	</div>
 </body>
 </html>

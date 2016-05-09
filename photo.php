@@ -1,17 +1,17 @@
 <?php  include('header.php');
 include('config/setup.php');
 if (htmlspecialchars($_GET['login']) && htmlspecialchars($_GET['idphoto'])) {
-	$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".htmlspecialchars($_GET['login'])."';");
+	$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".sqlapo(htmlspecialchars($_GET['login']))."';");
 	$result = $log->fetch();
-	$snap = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 AND `login` LIKE '".htmlspecialchars($result['login'])."' AND `id` = ".$_GET['idphoto'].";");
+	$snap = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 AND `login` LIKE '".htmlspecialchars($result['login'])."' AND `id` LIKE '".sqlapo(htmlspecialchars($_GET['idphoto']))."';");
 	$snapnb = $snap->fetch();
 	if ($result && $snapnb) {
 		$counts = $bdd->query("SELECT * FROM snap WHERE `post` LIKE 1 AND `login` LIKE '".htmlspecialchars($result['login'])."' ORDER BY `date` DESC;");
 		$countss = $counts->fetchAll();
 		?>
 		<div id="blpdp">
-			<span id="prevacc"><?php echo htmlspecialchars($_GET['login']); ?></span>
-			<?php if ($_SESSION['login'] === htmlspecialchars($_GET['login'])) { ?>
+			<span id="prevacc"><?php echo sqlapo(htmlspecialchars($_GET['login'])); ?></span>
+			<?php if ($_SESSION['login'] === sqlapo(htmlspecialchars($_GET['login']))) { ?>
 			<a id="sett" href="editacc.php"><img id="logset" src="resources/settings.png"/></a>
 			<?php } ?>
 			<img id="pdp" src="<?php echo $result['pdp'];?>"/>
@@ -24,8 +24,8 @@ if (htmlspecialchars($_GET['login']) && htmlspecialchars($_GET['idphoto'])) {
 			<?php if ($snapnb) {?>
 				<div id='allphoto'>
 					<?php
-						$like = $bdd->query("SELECT * FROM love WHERE `login` LIKE '".$_GET['login']."' AND `idphoto` LIKE ".htmlspecialchars($_GET['idphoto']).";");
-						$nbrlike = $bdd->query("SELECT * FROM love WHERE `like` LIKE 1 AND `idphoto` LIKE ".htmlspecialchars($_GET['idphoto']).";");
+						$like = $bdd->query("SELECT * FROM love WHERE `login` LIKE '".sqlapo(htmlspecialchars($_GET['login']))."' AND `idphoto` LIKE '".sqlapo(htmlspecialchars($_GET['idphoto']))."';");
+						$nbrlike = $bdd->query("SELECT * FROM love WHERE `like` LIKE 1 AND `idphoto` LIKE '".sqlapo(htmlspecialchars($_GET['idphoto']))."';");
 						$nbrlikef = $nbrlike->fetchall();
 						$likef = $like->fetch();
 						if ($likef && $likef['like'] == 1) {
@@ -56,7 +56,7 @@ if (htmlspecialchars($_GET['login']) && htmlspecialchars($_GET['idphoto'])) {
 							<input id="textcom" type="text" name="sendcom" value="">
 							<?php } ?>
 						</form>
-						<?php $comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE ".htmlspecialchars($_GET['idphoto']).";");
+						<?php $comm = $bdd->query("SELECT * FROM comment WHERE `idphoto` LIKE '".sqlapo(htmlspecialchars($_GET['idphoto']))."';");
 						$comment = $comm->fetchall();
 						if ($comment) {?>
 							<div tabindex="0" class="onclick-menu">
@@ -81,8 +81,8 @@ else {
 	<?php
 }?>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-	<div class="footersnap">
-		<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
+	<div class="footerind">
+		<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
 	</div>
 </body>
 </html>

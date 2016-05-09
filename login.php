@@ -2,14 +2,17 @@
 session_start();
 include('config/setup.php');
 
-$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".htmlspecialchars($_POST['ilogin'])."';");
+$login = sqlapo(htmlspecialchars($_POST['ilogin']));
+$pass = sqlapo(htmlspecialchars($_POST['ipass']));
+
+$log = $bdd->query("SELECT * FROM users WHERE `login` LIKE '".$login."';");
 $result = $log->fetch();
-if (htmlspecialchars($_POST['submit']) === 'Connect' && htmlspecialchars($_POST['ilogin']) && htmlspecialchars($_POST['ipass'])) {
-	if (htmlspecialchars($result['login']) === htmlspecialchars($_POST['ilogin']))
+if (htmlspecialchars($_POST['submit']) === 'Connect' && $login && $pass) {
+	if (htmlspecialchars($result['login']) === $login)
 	{
-		if (hash(whirlpool, htmlspecialchars($_POST['ipass'])) === htmlspecialchars($result['passwd'])) {
+		if (hash(whirlpool, $pass) === htmlspecialchars($result['passwd'])) {
 			if ($result['validate'] == 1) {
-				$_SESSION['login'] = htmlspecialchars($_POST['ilogin']);
+				$_SESSION['login'] = $login;
 				?>
 				<meta http-equiv="refresh" content='0;URL=index.php'/>
 				<?php

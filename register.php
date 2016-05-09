@@ -15,5 +15,9 @@ if (!$_SESSION['login']) {?>
 	<div class="err"><?php echo $_SESSION['error'];
 	$_SESSION['error'] = "";?></div>
 </div>
-<?php } include('footer.php');
-?>
+<?php }?>
+<div class="footerind">
+	<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
+</div>
+	</body>
+</html>

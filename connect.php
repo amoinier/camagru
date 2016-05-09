@@ -14,8 +14,8 @@ if (!$_SESSION['login']) {?>
 	$_SESSION['error'] = "";?></div>
 </div>
 <div id="reg"><a id="regtext" href="register.php">Register</a></div>
-<div class="footer">
-	<div id="copyr"> InstaSnap &copy; amoinier 2016</div>
+<div class="footerind">
+	<div id="copyr"> InstaSnap &copy; amoinier, 2016</div>
 </div>
 	</body>
 </html>
